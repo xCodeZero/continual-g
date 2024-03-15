@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import { Skeleton } from "../ui/skeleton";
 
-function OverviewChartSection(props: any) {
+function OverviewChartSection() {
   const [chartData, setChartData] = useState<string[]>([
     "0",
     "0",
@@ -23,8 +23,6 @@ function OverviewChartSection(props: any) {
     "0",
   ]);
   const [loading, setLoading] = useState(true);
-  const [Chart, setChart] = useState<any>();
-  const hasType = typeof props?.type !== "undefined";
 
   const chartDefaultOptions = {
     chart: {
@@ -71,9 +69,6 @@ function OverviewChartSection(props: any) {
         "/chart"
       );
       setChartData(Object.values(stats) as string[]);
-      import("react-apexcharts").then((mod) => {
-        setChart(() => mod.default);
-      });
       setLoading(false);
     }
 
@@ -87,22 +82,19 @@ function OverviewChartSection(props: any) {
       {loading ? (
         <Skeleton className="w-full h-[400px] mt-8" />
       ) : (
-        hasType &&
-        Chart && (
-          //@ts-ignore
-          <Chart
-            options={chartDefaultOptions}
-            series={[
-              {
-                name: "Orders",
-                data: chartData,
-                color: "#FFA03F",
-              },
-            ]}
-            type="line"
-            height={400}
-          />
-        )
+        //@ts-ignore
+        <Chart
+          options={chartDefaultOptions}
+          series={[
+            {
+              name: "Orders",
+              data: chartData,
+              color: "#FFA03F",
+            },
+          ]}
+          type="line"
+          height={400}
+        />
       )}
     </div>
   );
