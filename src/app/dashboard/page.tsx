@@ -8,7 +8,7 @@ function Overview() {
   return (
     <div className="flex flex-col gap-16 mt-[4rem] mx-4 md:mx-8">
       <OverviewStatisticSection />
-      <OverviewChartSection />
+      {/* <OverviewChartSection /> */}
       <OrderTable />
     </div>
   );
