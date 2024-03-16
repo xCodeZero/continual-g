@@ -63,25 +63,17 @@ function OverviewChartSection() {
   };
 
   useEffect(() => {
-    async function fetchChartData() {
-      try {
-        const stats = await apiClient.get<IChart>(
-          apiResources.statistics,
-          "/chart"
-        );
-        setChartData(Object.values(stats) as string[]);
-      } catch (error) {
-        console.error("Error fetching chart data:", error);
-      } finally {
-        setLoading(false);
-      }
+    async function fetch() {
+      const stats = await apiClient.get<IChart>(
+        apiResources.statistics,
+        "/chart"
+      );
+      setChartData(Object.values(stats) as string[]);
+      setLoading(false);
     }
 
-    fetchChartData();
+    fetch();
   }, []);
-
-  // Check if window is available before rendering the Chart component
-  const isBrowser = typeof window !== "undefined";
 
   return (
     <div>
@@ -89,21 +81,23 @@ function OverviewChartSection() {
 
       {loading ? (
         <Skeleton className="w-full h-[400px] mt-8" />
-      ) : isBrowser ? (
-        //@ts-ignore
-        <Chart
-          options={chartDefaultOptions}
-          series={[
-            {
-              name: "Orders",
-              data: chartData,
-              color: "#FFA03F",
-            },
-          ]}
-          type="line"
-          height={400}
-        />
-      ) : null}
+      ) : (
+        typeof window !== "undefined" && (
+          //@ts-ignore
+          <Chart
+            options={chartDefaultOptions}
+            series={[
+              {
+                name: "Orders",
+                data: chartData,
+                color: "#FFA03F",
+              },
+            ]}
+            type="line"
+            height={400}
+          />
+        )
+      )}
     </div>
   );
 }
