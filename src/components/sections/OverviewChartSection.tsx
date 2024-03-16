@@ -4,8 +4,10 @@ import { apiClient } from "@/network";
 import apiResources from "@/network/resources";
 import { IChart } from "@/types";
 import React, { useEffect, useState } from "react";
-import Chart from "react-apexcharts";
+
 import { Skeleton } from "../ui/skeleton";
+
+const Chart = React.lazy(() => import("react-apexcharts"));
 
 function OverviewChartSection() {
   const [chartData, setChartData] = useState<string[]>([
