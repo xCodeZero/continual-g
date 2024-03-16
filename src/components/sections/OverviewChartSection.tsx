@@ -80,29 +80,30 @@ function OverviewChartSection() {
     fetchChartData();
   }, []);
 
+  // Check if window is available before rendering the Chart component
+  const isBrowser = typeof window !== "undefined";
+
   return (
     <div>
       <p className="text-[20px] font-semibold text-center">Orders Analytics</p>
 
       {loading ? (
         <Skeleton className="w-full h-[400px] mt-8" />
-      ) : (
-        typeof window !== "undefined" && (
-          //@ts-ignore
-          <Chart
-            options={chartDefaultOptions}
-            series={[
-              {
-                name: "Orders",
-                data: chartData,
-                color: "#FFA03F",
-              },
-            ]}
-            type="line"
-            height={400}
-          />
-        )
-      )}
+      ) : isBrowser ? (
+        //@ts-ignore
+        <Chart
+          options={chartDefaultOptions}
+          series={[
+            {
+              name: "Orders",
+              data: chartData,
+              color: "#FFA03F",
+            },
+          ]}
+          type="line"
+          height={400}
+        />
+      ) : null}
     </div>
   );
 }
