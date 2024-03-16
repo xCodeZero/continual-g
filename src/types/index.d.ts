@@ -71,7 +71,9 @@ export interface Orders {
 }
 
 export interface IChart {
-  Jan?: string;
+  chartData: { [key: string]: number };
+  chartDataIncome: { [key: string]: number };
+  Jan?: number;
   Feb?: number;
   Mar?: number;
   Apr?: number;

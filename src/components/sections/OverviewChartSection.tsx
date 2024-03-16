@@ -24,6 +24,20 @@ function OverviewChartSection() {
     "0",
     "0",
   ]);
+  const [chartDataIncome, setChartDataIncome] = useState<string[]>([
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+  ]);
   const [loading, setLoading] = useState(true);
 
   const chartDefaultOptions = {
@@ -70,7 +84,14 @@ function OverviewChartSection() {
         apiResources.statistics,
         "/chart"
       );
-      setChartData(Object.values(stats) as string[]);
+
+      const chartDataStrings = Object.values(stats.chartData).map(String);
+      const chartDataIncomeStrings = Object.values(stats.chartDataIncome).map(
+        String
+      );
+
+      setChartData(chartDataStrings);
+      setChartDataIncome(chartDataIncomeStrings);
       setLoading(false);
     }
 
@@ -93,6 +114,11 @@ function OverviewChartSection() {
                 name: "Orders",
                 data: chartData,
                 color: "#FFA03F",
+              },
+              {
+                name: "Total Income",
+                data: chartDataIncome,
+                color: "#008000",
               },
             ]}
             type="line"

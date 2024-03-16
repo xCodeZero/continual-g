@@ -69,6 +69,7 @@ export async function generateChart(userId: string) {
     });
 
     const chartData = {};
+    const chartDataIncome = {};
 
     // Initialize chartData with 0 for each month
     const months = [
@@ -86,16 +87,19 @@ export async function generateChart(userId: string) {
       "Dec",
     ];
     months.forEach((month) => ((chartData as any)[month] = 0));
+    months.forEach((month) => ((chartDataIncome as any)[month] = 0));
 
     orders.forEach((order) => {
       const createdAt = new Date(order.createdAt);
       const month = createdAt.toLocaleString("default", { month: "short" });
       const packagePrice = order.packageId.per_person_price_in_credit;
 
-      (chartData as any)[month] += packagePrice;
+      // Increment the count for the respective month
+      (chartData as any)[month]++;
+      (chartDataIncome as any)[month] += packagePrice;
     });
 
-    return chartData;
+    return { chartData, chartDataIncome };
   } catch (error) {
     handleError(error);
   }
