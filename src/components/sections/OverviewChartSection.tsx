@@ -61,8 +61,6 @@ function OverviewChartSection() {
       },
     },
   };
-  const [_window, setWindowObject] = React.useState(null);
-  const [_document, setDocumentObject] = React.useState(null);
 
   useEffect(() => {
     async function fetch() {
@@ -71,8 +69,6 @@ function OverviewChartSection() {
         "/chart"
       );
       setChartData(Object.values(stats) as string[]);
-      setWindowObject(_window);
-      setDocumentObject(_document);
       setLoading(false);
     }
 
@@ -86,21 +82,19 @@ function OverviewChartSection() {
       {loading ? (
         <Skeleton className="w-full h-[400px] mt-8" />
       ) : (
-        typeof _window !== "undefined" && (
-          //@ts-ignore
-          <Chart
-            options={chartDefaultOptions}
-            series={[
-              {
-                name: "Orders",
-                data: chartData,
-                color: "#FFA03F",
-              },
-            ]}
-            type="line"
-            height={400}
-          />
-        )
+        //@ts-ignore
+        <Chart
+          options={chartDefaultOptions}
+          series={[
+            {
+              name: "Orders",
+              data: chartData,
+              color: "#FFA03F",
+            },
+          ]}
+          type="line"
+          height={400}
+        />
       )}
     </div>
   );
