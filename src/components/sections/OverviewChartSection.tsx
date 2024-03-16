@@ -116,7 +116,7 @@ function OverviewChartSection() {
                 color: "#FFA03F",
               },
               {
-                name: "Total Income",
+                name: "Total ₦",
                 data: chartDataIncome,
                 color: "#008000",
               },

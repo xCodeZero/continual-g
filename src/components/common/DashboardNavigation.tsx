@@ -64,9 +64,12 @@ function DashboardNavigation() {
             <div className="flex justify-between flex-col md:flex-row gap-[1.5rem] select-none w-full">
               <div>
                 <p className="text-2xl md:text-[28px] font-bold">
-                  Welcome Back, {user?.firstName}
+                  Welcome Back, {user?.firstName + " " + user?.lastName}
                 </p>
-                <p className="text-secondary">
+                <p className="text-1xl font-bold">
+                  Account ID: {user?.accountId}
+                </p>
+                <p className="text-secondary mt-2">
                   Here is the information about all your orders
                 </p>
               </div>

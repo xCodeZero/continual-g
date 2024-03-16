@@ -24,7 +24,7 @@ function OverviewStatisticSection() {
     },
     {
       item: "Total Order Amount",
-      value: `$ ${useStats?.orders?.totalOrderAmount}`,
+      value: `₦ ${useStats?.orders?.totalOrderAmount}`,
       icon: "/images/check_icon.png",
     },
     {
