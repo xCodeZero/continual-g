@@ -181,7 +181,7 @@ function DashboardSidebar({
       </div>
       <div className="flex flex-col justify-between h-[calc(100vh-5rem)]">
         <section className="flex flex-col justify-between gap-6 mt-[2rem]">
-          {sidebarItems.slice(0, 4).map((item, index) => (
+          {sidebarItems.slice(0, 5).map((item, index) => (
             <Link href={item.link} key={index}>
               <SidebarElement
                 icon={item.icon}

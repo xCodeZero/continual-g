@@ -2,9 +2,13 @@ declare type CreateUserParams = {
   affiliateId: string;
   accountId: string;
   firstName: string;
-  lastLame: string;
+  lastName: string;
   email: string;
   password: string;
+  phoneNumber: string;
+  address: string;
+  bankAccount: string;
+  bank: string;
 };
 
 declare type UpdateUserParams = {
@@ -15,6 +19,8 @@ declare type UpdateUserParams = {
   creditBalance: number;
   suspended: string;
   userRole: number;
+  phoneNumber: string;
+  address: string;
 };
 
 declare type CreateTransactionData = {
@@ -40,7 +46,7 @@ declare type PackageData = {
   location: string;
   total_days: number;
   total_people_allowed: number;
-  status?: "PENDING" | "SUCCESS" | "FAIL";
+  status?: "PENDING" | "SUCCESS" | "FAIL" | "PROCESSING" | "ON DELIVERY";
   average_rating?: number;
   total_rating?: number;
 };

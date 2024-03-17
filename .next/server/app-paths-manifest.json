@@ -1,12 +1,6 @@
 {
+  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
-  "/api/statistics/chart/route": "app/api/statistics/chart/route.js",
-  "/api/statistics/route": "app/api/statistics/route.js",
-  "/api/orders/route": "app/api/orders/route.js",
-  "/api/packages/route": "app/api/packages/route.js",
-  "/api/transactions/route": "app/api/transactions/route.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/packages/page": "app/dashboard/packages/page.js",
-  "/dashboard/orders/page": "app/dashboard/orders/page.js",
-  "/dashboard/transactions/page": "app/dashboard/transactions/page.js"
+  "/api/register/route": "app/api/register/route.js",
+  "/icon.png/route": "app/icon.png/route.js"
 }

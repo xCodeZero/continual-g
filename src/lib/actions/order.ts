@@ -131,6 +131,10 @@ export async function createOrder(orderData: OrderData) {
         Number(selectedPackage?.per_person_price_in_credit);
       await updateUser(user._id, { creditCoins: reconciledCredit });
 
+      //NOTE: Add amount to  Affiliate's credit
+      const addCreditToAffiliate = Number(user.creditCoins) + Number(30000);
+      await updateUser(user.affiliateId, { creditCoins: addCreditToAffiliate });
+
       return JSON.parse(JSON.stringify(newOrder));
     }
     handleError("Sorry, insufficient balance, kindly top up");

@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Toaster } from "@/components/ui/toaster";
 
 import AuthWrapperForm from "@/components/forms/AuthWrapperForm";
+import Header from "@/components/common/Header";
 
 function HeroSection() {
   return (
@@ -15,8 +16,22 @@ function HeroSection() {
           <p className="font-normal">AFTER INTENSE WORKOUTS</p>
           <div className="hidden md:block w-[215px] h-[6px] bg-primary absolute top-[6rem] left-2"></div>
         </div>
+        <Header
+          title="Make the most of your everyday workouts"
+          description=""
+        />
         <p className="text-black mt-4 opacity-[75] mb-8 md:my-8">
-          Make the most of your everyday workouts
+          As a fitness enthusiast, everyday workout is an inevitable part of who
+          you are. But is your body recovering from these vigorous workouts?
+        </p>
+
+        <p className="text-black mt-4 opacity-[75] mb-8 md:my-8 lg:w-[900px]">
+          Intense training can drain you out faster, making your breathing more
+          rapid as the oxidative stress increases in your body. Hence there is a
+          higher rate of free radical production leading to sluggishness, muscle
+          soreness, fatigue, and stiffness. You can experience rapid recovery
+          from muscle pain after exercise with Continual-G® - the only dietary
+          supplement with Glyteine.
         </p>
 
         <div>
@@ -31,7 +46,7 @@ function HeroSection() {
         </div>
       </div>
       <div>
-        <img src="/images/experience.jpg" alt="hero image" />
+        <img src="/images/hero.png" alt="hero image" />
       </div>
       <Toaster />
     </section>

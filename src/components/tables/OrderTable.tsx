@@ -39,6 +39,7 @@ import { format } from "date-fns";
 
 export type Order = {
   no: number;
+  name: string;
   id: string;
   date: string;
   customerName: string;
@@ -77,16 +78,16 @@ export const columns: ColumnDef<Order>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("customerName")}</div>
+      <div className="uppercase">{row.getValue("customerName")}</div>
     ),
   },
 
   {
-    accessorKey: "location",
+    accessorKey: "name",
     header: "Package",
     cell: ({ row }) => (
       // <div className="capitalize">{row.getValue("location")}</div>
-      <div className="capitalize">{"Package 1"}</div>
+      <div className="capitalize">{row.getValue("name")}</div>
     ),
   },
 
@@ -129,7 +130,7 @@ export const columns: ColumnDef<Order>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase text-left">{row.getValue("status")}</div>
+      <div className="uppercase text-left">{row.getValue("status")}</div>
     ),
   },
 
@@ -204,16 +205,20 @@ export function OrderTable() {
       const formattedData = orders?.map((order, index) => {
         return {
           no: index + 1,
+          name: order?.packageId?.name,
           id: order._id,
           date: order?.createdAt
             ? format(order?.createdAt, "MMM d, yyyy"?.toString())
             : "",
-          customerName: order?.userId?.firstName,
+          customerName:
+            order?.userId?.firstName + " " + order?.userId?.lastName,
           location: order?.packageId?.location,
           amount: order?.packageId?.per_person_price_in_credit,
-          status: order?.status?.toUpperCase(),
+          status: order?.status,
         };
       });
+
+      console.log(formattedData);
       setData(formattedData);
       setLoading(false);
     }

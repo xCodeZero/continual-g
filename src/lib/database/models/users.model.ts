@@ -24,6 +24,16 @@ const UserSchema = new Schema(
       required: true,
       unique: true,
     },
+    phoneNumber: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    address: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     creditCoins: {
       type: Number,
       default: 0, // User is given 0 credits on signup
@@ -43,6 +53,14 @@ const UserSchema = new Schema(
     userRole: {
       type: Number,
       default: 1,
+    },
+    bankAccount: {
+      type: String,
+      default: "",
+    },
+    bank: {
+      type: String,
+      default: "",
     },
   },
   { timestamps: true } // This will add the createdAt and updatedAt fields

@@ -9,6 +9,13 @@ import MainButton from "../common/MainButton";
 import { apiClient } from "@/network";
 import apiResources from "@/network/resources";
 import { useToast } from "@/components/ui/use-toast";
+import { z } from "zod";
+
+const formSchema = z.object({
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+});
 
 function SignupForm({ setIsLogin }: { setIsLogin: (value: boolean) => void }) {
   const { toast } = useToast();
@@ -18,6 +25,8 @@ function SignupForm({ setIsLogin }: { setIsLogin: (value: boolean) => void }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [affiliateId, setAffiliateId] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
 
   const handleRegister = async () => {
     const generatedStrings = Array.from({ length: 1 }, () =>
@@ -25,7 +34,15 @@ function SignupForm({ setIsLogin }: { setIsLogin: (value: boolean) => void }) {
     );
 
     try {
-      if (email && password && firstName && lastName && affiliateId) {
+      if (
+        email &&
+        password &&
+        firstName &&
+        lastName &&
+        affiliateId &&
+        phoneNumber &&
+        address
+      ) {
         setLoading(true);
         const res = await apiClient.post(
           apiResources.register,
@@ -37,6 +54,8 @@ function SignupForm({ setIsLogin }: { setIsLogin: (value: boolean) => void }) {
             lastName,
             email,
             password,
+            phoneNumber,
+            address,
           },
           toast
         );
@@ -53,6 +72,12 @@ function SignupForm({ setIsLogin }: { setIsLogin: (value: boolean) => void }) {
           setLoading(false);
           setIsLogin(true);
         }
+      } else {
+        toast({
+          title: "User creation error",
+          description: "Plase fill up the form.",
+          className: "error-toast",
+        });
       }
     } catch (err) {
       setLoading(false);
@@ -121,6 +146,32 @@ function SignupForm({ setIsLogin }: { setIsLogin: (value: boolean) => void }) {
             type="email"
             value={email}
             onChange={(e) => setEmail(e?.target?.value)}
+          />
+        </div>
+        <div className=" gap-4">
+          <Label htmlFor="lastName" className="text-right">
+            Phone Number
+          </Label>
+          <Input
+            id="phoneNumber"
+            placeholder="Please provide a valid contact number"
+            className="col-span-3"
+            type="name"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e?.target?.value)}
+          />
+        </div>
+        <div className=" gap-4">
+          <Label htmlFor="lastName" className="text-right">
+            Address
+          </Label>
+          <Input
+            id="address"
+            placeholder="Please provide a valid address"
+            className="col-span-3"
+            type="name"
+            value={address}
+            onChange={(e) => setAddress(e?.target?.value)}
           />
         </div>
         <div className=" gap-4">

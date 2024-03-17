@@ -20,9 +20,9 @@ export async function createUser(user: CreateUserParams) {
 
     const existingUserId = await User.findOne({ accountId: user.accountId });
 
-    if (!checkAffiliateUser) {
-      handleError(`Your affiliate user ID: ${user.affiliateId} do not exist.`);
-    }
+    // if (!checkAffiliateUser) {
+    //   handleError(`Your affiliate user ID: ${user.affiliateId} do not exist.`);
+    // }
 
     if (existingUser) {
       handleError("User with this email already exists");

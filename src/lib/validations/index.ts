@@ -41,6 +41,22 @@ const CreateUserInputValidation = z.object({
     .max(25, {
       message: "Password must be at most 25 characters.",
     }),
+  phoneNumber: z
+    .string()
+    .min(3, {
+      message: "Please provide a contact number.",
+    })
+    .max(50, {
+      message: "Please provide a valid contact number",
+    }),
+  address: z
+    .string()
+    .min(3, {
+      message: "Please provide a address.",
+    })
+    .max(50, {
+      message: "Please provide a valide address.",
+    }),
 });
 
 const LoginUserInputValidation = z.object({

@@ -5,19 +5,22 @@ import React from "react";
 function WhyChooseUs() {
   const chooseUsData = [
     {
-      icon: "/images/c_1.png",
-      title: "Best Price Guarantee",
-      desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      icon: "/images/continualg/the-science-behind-continual-g.png",
+      title: "The Fundamental Science behind Continual-G®",
+      desription:
+        "Having insufficient cellular glutathione is behind most poor health conditions. It leads to oxidative damage, loss of physiological function, and related symptoms.",
     },
     {
-      icon: "/images/c_2.png",
-      title: "Best Price Guarantee",
-      desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      icon: "/images/continualg/experience-the-power-of-glyteine.png",
+      title: "Experience the Power of the Glyteine® in Continual-G®",
+      desription:
+        "Glyteine® is the only clinically proven supplement capable of boosting your cellular glutathione in a single dose to provide relief from the ravages of oxidative stress.",
     },
     {
-      icon: "/images/c_3.png",
-      title: "Best Price Guarantee",
-      desription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      icon: "/images/continualg/improve-health-at-the-cellular-level.png",
+      title: "Improve your Health at the Cellular Level",
+      desription:
+        "Every cell in your body needs to make its own supply of Glyteine to ensure it has enough glutathione to fight oxidative stress. Help your body’s cells stay healthy with Continual-G®.",
     },
   ];
 
@@ -48,10 +51,10 @@ function WhyChooseUs() {
           />
           <p>Think faster, Fight Stronger, Recover Earlier With CONTINUAL-G®</p>
 
-          <div className="relative">
+          <div className="relative mt-5 w-[700px]">
             {chooseUsData.map((item, index) => (
               <div key={index} className="flex items-center">
-                <div>
+                <div className="mb-6 mr-3">
                   <img src={item.icon} alt="choose us icon" />
                 </div>
                 <div>
@@ -60,7 +63,7 @@ function WhyChooseUs() {
                 </div>
               </div>
             ))}
-
+            <MainButton text="EXPLORE MORE" classes="w-[150px] mt-12" />
             <div className="hidden md:block absolute right-0">
               <img src="/images/plane.png" alt="plane" />
             </div>
@@ -73,28 +76,38 @@ function WhyChooseUs() {
           <img src="/images/choose_us_2.png" alt="choose us" />
         </div>
         <div>
-          <Header
-            title="Why Choose Us?"
-            description="Choose Dream Dictation For Explore World"
-          />
+          <Header title="NOURISH YOUR SKIN" description="FROM WITHIN" />
 
           <p className="my-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Most of us focus on the external appearance and topical maintenance
+            of our skin. But ever wondered how to make your skin healthy from
+            within?
           </p>
 
-          <MainButton text="About Us" classes="w-[150px]" />
+          <Header
+            title="What goes on inside your body affects the outside!"
+            description=""
+          />
 
-          <div className="flex flex-col gap-8 md:gap-16 md:flex-row ">
+          <p className="my-8 w-[700px]">
+            Your skin is the largest organ in your body, composed of trillions
+            of cells! Every day, your skin must defend itself from a barrage of
+            external and internal threats - from humidity to UV radiation to
+            pollution and even aging. All of these increase free radicals that
+            result in the oxidation of oils in the skin. Leading to a lack of
+            skin radiance, age spots, and visible signs of aging.
+          </p>
+
+          <MainButton text="EXPLORE MORE" classes="w-[150px]" />
+
+          {/* <div className="flex flex-col gap-8 md:gap-16 md:flex-row ">
             {ourStats.map((item, index) => (
               <div key={index} className="">
                 <p className="text-[58px] font-bold">{item.value}</p>
                 <p className="text-secondary">{item.item}</p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

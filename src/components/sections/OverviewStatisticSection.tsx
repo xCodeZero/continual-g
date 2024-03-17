@@ -7,6 +7,10 @@ import apiResources from "@/network/resources";
 import { IStatistics } from "@/types";
 import { Skeleton } from "../ui/skeleton";
 
+const numberWithCommas = (x: number) => {
+  return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
 function OverviewStatisticSection() {
   const [loading, setLoading] = useState(true);
   const [useStats, setUserStats] = useState<IStatistics>();
@@ -24,7 +28,7 @@ function OverviewStatisticSection() {
     },
     {
       item: "Total Order Amount",
-      value: `₦ ${useStats?.orders?.totalOrderAmount}`,
+      value: `₦ ${numberWithCommas(useStats?.orders?.totalOrderAmount!)}`,
       icon: "/images/check_icon.png",
     },
     {

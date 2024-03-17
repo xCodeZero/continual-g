@@ -20,6 +20,11 @@ export const sidebarItems = [
     link: "/dashboard/transactions",
   },
   {
+    icon: "solar:case-outline",
+    title: "Pending Orders",
+    link: "/dashboard/pending-orders",
+  },
+  {
     icon: "clarity:cog-line",
     title: "Logout",
     link: "/dashboard/setting",
