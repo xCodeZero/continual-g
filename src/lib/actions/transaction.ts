@@ -10,6 +10,11 @@ import {
   CreateTransactionData,
   UpdateTransactionData,
 } from "@/types";
+import Earnings from "../database/models/earnings.model";
+
+import mongoose from "mongoose";
+import Cashout from "../database/models/cashout.model";
+import { User } from "lucide-react";
 
 export async function createTransaction(
   transactionData: CreateTransactionData
@@ -29,7 +34,7 @@ export async function getAllTransactions(userId: string) {
   try {
     await connectToDatabase();
 
-    const transactions = await Transaction.find({ userId }).sort("-createdAt");;
+    const transactions = await Transaction.find({ userId }).sort("-createdAt");
 
     return JSON.parse(JSON.stringify(transactions));
   } catch (error) {
@@ -57,6 +62,42 @@ export async function getUserTotalTransactions(userId: string) {
 
     const transactionCount = await Transaction.countDocuments({ userId });
     return transactionCount;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+export async function getUserTotalEarnings(userId: string) {
+  try {
+    await connectToDatabase();
+
+    const earningsCount = await Earnings.countDocuments({ userId });
+    return earningsCount;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+export async function getUserTotalAmountEarnings(userId: string) {
+  try {
+    await connectToDatabase();
+
+    const earningsTotalAmount = await Earnings.aggregate([
+      {
+        $match: { userId: new mongoose.Types.ObjectId(userId) }, // Match documents based on userId
+      },
+      {
+        $group: {
+          _id: null,
+          totalAmount: { $sum: "$amount" }, // Sum the "amount" field
+        },
+      },
+    ]);
+
+    const totalAmount =
+      earningsTotalAmount.length > 0 ? earningsTotalAmount[0].totalAmount : 0;
+
+    return totalAmount;
   } catch (error) {
     handleError(error);
   }

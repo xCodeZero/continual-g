@@ -6,7 +6,8 @@ import Order from "../database/models/orders.model";
 import { handleError } from "../utils";
 import { getPackageById } from "./package";
 import { createTransaction } from "./transaction";
-import { getUserById, updateUser } from "./user";
+import { getUserAffiliateById, getUserById, updateUser } from "./user";
+import { createEarnings } from "./earnings";
 
 export async function getAllOrders(userId: string) {
   try {
@@ -110,7 +111,11 @@ export async function createOrder(orderData: OrderData) {
     await connectToDatabase();
     //NOTE: Check if user has enough credit
     const user = await getUserById(orderData.userId);
+
+    const affiliate = await getUserAffiliateById(user.affiliateId);
     const selectedPackage = await getPackageById(orderData.packageId);
+
+    console.log(affiliate);
 
     if (user.creditCoins >= selectedPackage?.per_person_price_in_credit) {
       const newOrder = await Order.create({ ...orderData, status: "SUCCESS" });
@@ -131,9 +136,22 @@ export async function createOrder(orderData: OrderData) {
         Number(selectedPackage?.per_person_price_in_credit);
       await updateUser(user._id, { creditCoins: reconciledCredit });
 
+      const earnings = {
+        userId: affiliate._id,
+        accountId: user.accountId,
+        source: user.firstName + " " + user.lastName,
+        source_id: user.accountId,
+        amount: 30000,
+        status: "SUCCESS" as "SUCCESS",
+      };
+
+      await createEarnings(earnings);
+
       //NOTE: Add amount to  Affiliate's credit
-      const addCreditToAffiliate = Number(user.creditCoins) + Number(30000);
-      await updateUser(user.affiliateId, { creditCoins: addCreditToAffiliate });
+      const addCreditToAffiliate = Number(affiliate.creditCoins) + 30000;
+      await updateUser(affiliate._id, {
+        creditCoins: addCreditToAffiliate,
+      });
 
       return JSON.parse(JSON.stringify(newOrder));
     }

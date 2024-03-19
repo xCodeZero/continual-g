@@ -9,13 +9,6 @@ import MainButton from "../common/MainButton";
 import { apiClient } from "@/network";
 import apiResources from "@/network/resources";
 import { useToast } from "@/components/ui/use-toast";
-import { z } from "zod";
-
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-});
 
 function SignupForm({ setIsLogin }: { setIsLogin: (value: boolean) => void }) {
   const { toast } = useToast();

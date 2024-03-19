@@ -20,9 +20,9 @@ export async function createUser(user: CreateUserParams) {
 
     const existingUserId = await User.findOne({ accountId: user.accountId });
 
-    // if (!checkAffiliateUser) {
-    //   handleError(`Your affiliate user ID: ${user.affiliateId} do not exist.`);
-    // }
+    if (!checkAffiliateUser) {
+      handleError(`Your affiliate user ID: ${user.affiliateId} do not exist.`);
+    }
 
     if (existingUser) {
       handleError("User with this email already exists");
@@ -75,6 +75,20 @@ export async function getUserById(userId: string) {
     await connectToDatabase();
 
     const user = await User.findOne({ _id: userId }).select("-password");
+
+    if (!user) throw new Error("User not found");
+
+    return JSON.parse(JSON.stringify(user));
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+export async function getUserAffiliateById(userId: string) {
+  try {
+    await connectToDatabase();
+
+    const user = await User.findOne({ accountId: userId }).select("-password");
 
     if (!user) throw new Error("User not found");
 

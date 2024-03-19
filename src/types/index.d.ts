@@ -31,6 +31,27 @@ declare type CreateTransactionData = {
   status?: "PENDING" | "SUCCESS" | "FAIL";
 };
 
+declare type CreateEarningsData = {
+  userId: Types.ObjectId;
+  source: string;
+  source_id: string;
+  amount: number;
+  status?: "PENDING" | "SUCCESS" | "FAIL";
+};
+
+declare type CreateCashoutData = {
+  userId: Types.ObjectId;
+  source: string;
+  source_id: string;
+  amount: number;
+  tax: number;
+  fee: number;
+  bankAccount: string;
+  bankAccountName: string;
+  bank: string;
+  status?: "PENDING" | "SUCCESS" | "FAIL";
+};
+
 declare type UpdateTransactionData = {
   userId: Types.ObjectId;
   source: "CREDIT" | "ORDER";
@@ -69,6 +90,10 @@ export interface IStatistics {
   orders?: Orders;
   totalPackages?: number;
   totalTransactions?: number;
+  totalEarnings?: number;
+  totalEarningsAmount?: number;
+  totalCashout?: number;
+  totalCashoutAmount?: number;
 }
 
 export interface Orders {
@@ -108,6 +133,33 @@ export interface ITransactionResponse {
   source?: string;
   source_id?: string;
   amount?: number;
+  status?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export interface IEarningsResponse {
+  _id?: string;
+  userId?: string;
+  source?: string;
+  source_id?: string;
+  amount?: number;
+  status?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export interface ICashoutResponse {
+  _id?: string;
+  userId?: string;
+  source?: string;
+  source_id?: string;
+  fee?: number;
+  tax?: number;
+  amount?: number;
+  bankAccount?: string;
+  bankAccountName?: string;
+  bank?: string;
   status?: string;
   createdAt?: Date;
   updatedAt?: Date;

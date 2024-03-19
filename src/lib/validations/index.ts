@@ -82,8 +82,44 @@ const CreateOrderInputValidation = z.object({
   packageId: z.string(),
 });
 
+const CreateCashoutInputValidation = z.object({
+  amount: z
+    .string()
+    .min(3, {
+      message: "Amount must be at least 1 characters.",
+    })
+    .max(50, {
+      message: "Amount must be at most 50 characters.",
+    }),
+  bankAccount: z
+    .string()
+    .min(3, {
+      message: "Account must be at least 3 characters.",
+    })
+    .max(50, {
+      message: "Account must be at most 50 characters.",
+    }),
+  bankAccountName: z
+    .string()
+    .min(3, {
+      message: "Account name must be at least 3 characters.",
+    })
+    .max(50, {
+      message: "Account name must be at most 50 characters.",
+    }),
+  bank: z
+    .string()
+    .min(3, {
+      message: "Please enter a valid bank name.",
+    })
+    .max(50, {
+      message: "Please enter a valid bank name.",
+    }),
+});
+
 export {
   CreateUserInputValidation,
   LoginUserInputValidation,
   CreateOrderInputValidation,
+  CreateCashoutInputValidation,
 };

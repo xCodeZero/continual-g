@@ -80,6 +80,7 @@ function OverviewChartSection() {
 
   useEffect(() => {
     async function fetch() {
+      setLoading(true);
       const stats = await apiClient.get<IChart>(
         apiResources.statistics,
         "/chart"

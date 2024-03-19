@@ -58,6 +58,10 @@ const UserSchema = new Schema(
       type: String,
       default: "",
     },
+    bankAccountName: {
+      type: String,
+      default: "",
+    },
     bank: {
       type: String,
       default: "",

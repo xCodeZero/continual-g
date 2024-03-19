@@ -38,6 +38,9 @@ function PackageCard({
       creditCoins: number;
       creditBalance: number;
       userRole: number;
+      bankAccount: string;
+      bankAccountName: string;
+      bank: string;
     }>(apiResources.users, "/");
     // Set to global state
     setUser(res);
@@ -66,7 +69,7 @@ function PackageCard({
       .catch(() => {
         toast({
           title: "Insufficient Balance",
-          description: "Try topping up you balance and try again",
+          description: "Try topping up your balance and try again",
           className: "error-toast",
         });
         setLoading(false);

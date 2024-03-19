@@ -20,9 +20,14 @@ export const sidebarItems = [
     link: "/dashboard/transactions",
   },
   {
-    icon: "solar:case-outline",
-    title: "Pending Orders",
-    link: "/dashboard/pending-orders",
+    icon: "octicon:organization-16",
+    title: "Earnings History",
+    link: "/dashboard/earnings",
+  },
+  {
+    icon: "octicon:organization-16",
+    title: "Cash Out",
+    link: "/dashboard/cashout",
   },
   {
     icon: "clarity:cog-line",

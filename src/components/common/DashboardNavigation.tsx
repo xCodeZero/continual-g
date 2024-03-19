@@ -33,6 +33,9 @@ function DashboardNavigation() {
           creditCoins: number;
           creditBalance: number;
           userRole: number;
+          bankAccount: string;
+          bankAccountName: string;
+          bank: string;
         }>(apiResources.users, "/");
         // Set to global state
         setUser(res);
@@ -70,7 +73,7 @@ function DashboardNavigation() {
                   Account ID: {user?.accountId}
                 </p>
                 <p className="text-secondary mt-2">
-                  Here is the information about all your orders
+                  Here is the information about all your account
                 </p>
               </div>
               <div className="text-black font-[500] flex items-center gap-8">

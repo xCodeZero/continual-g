@@ -5,6 +5,8 @@ const apiResources = {
   packages: "/packages",
   statistics: "/statistics",
   transactions: "/transactions",
+  earnings: "/earnings",
+  cashout: "/cashout",
   users: "/users",
 };
 

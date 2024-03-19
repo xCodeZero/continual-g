@@ -13,6 +13,9 @@ export const ATOMS = {
     creditCoins: 0,
     creditBalance: 0,
     userRole: 1,
+    bankAccount: "",
+    bankAccountName: "",
+    bank: "",
   }),
   sidebarMinimized: atom(sidebarMinimizedDefault),
 };
