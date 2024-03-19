@@ -42,13 +42,14 @@ function Footer() {
                 <div>
                   <img src="/images/maps_and_flags.png" alt="location icon" />
                 </div>
-                <p>To be added...</p>
+                <p>No 13 Abeokuta Street, Area 8, Garki, Abuja</p>
               </div>
               <div className="flex gap-2 items-center">
                 <div>
                   <img src="/images/call_icon.png" alt="location icon" />
                 </div>
-                <p>+01 1234567890</p>
+                <p>+2348178888842,</p>
+                <p>+2348178888843</p>
               </div>
 
               <div className="flex gap-2 items-center">

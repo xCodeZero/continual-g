@@ -1,8 +1,8 @@
 import React from "react";
 import MainButton from "@/components/common/MainButton";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 import { Toaster } from "@/components/ui/toaster";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 import AuthWrapperForm from "@/components/forms/AuthWrapperForm";
 import Header from "@/components/common/Header";
@@ -33,7 +33,6 @@ function HeroSection() {
           from muscle pain after exercise with Continual-G® - the only dietary
           supplement with Glyteine.
         </p>
-
         <div>
           <Dialog>
             <DialogTrigger asChild>

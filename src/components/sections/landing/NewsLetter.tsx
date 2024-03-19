@@ -11,13 +11,13 @@ function NewsLetter() {
   const [email, setEmail] = useState("");
   return (
     <div className="relative w-full">
-      <div className="md:text-[38px] font-semibold text-center mb-6 bg-primary text-white flex-row flex items-center justify-center w-auto max-sm:text-sm">
+      <div className="md:text-[38px] font-semibold text-center mb-6 bg-primary text-white  flex-row flex items-center justify-evenly w-auto max-sm:text-sm">
         <div className="flex items-center justify-center mr-5">
           <img
             src="/images/continualg/free-shipping.png"
             alt="free shipping"
-            width={60}
-            height={60}
+            width={40}
+            height={40}
           />
           <span className="ml-2">FREE SHIPPING</span>
         </div>
@@ -42,8 +42,8 @@ function NewsLetter() {
           <img
             src="/images/continualg/security-shield.png"
             alt="secure"
-            width={60}
-            height={60}
+            width={40}
+            height={40}
           />
           <span className="ml-2">100% SECURE</span>
         </div>
@@ -51,12 +51,12 @@ function NewsLetter() {
           className="divider"
           style={{ width: "2px", height: "90px", backgroundColor: "white" }}
         ></div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center mr-5">
           <img
             src="/images/continualg/quality-control.png"
             alt="quality"
-            width={60}
-            height={60}
+            width={40}
+            height={40}
           />
           <span className="ml-2">QUALITY</span>
         </div>

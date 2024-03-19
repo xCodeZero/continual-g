@@ -3,6 +3,7 @@ const apiResources = {
   register: "/register",
   orders: "/orders",
   packages: "/packages",
+  frontpackage: "/frontpackage",
   statistics: "/statistics",
   transactions: "/transactions",
   earnings: "/earnings",

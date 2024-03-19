@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { Provider } from 'jotai';
-import { ReactElement, ReactNode } from 'react';
+import { Provider } from "jotai";
+import { ReactElement, ReactNode } from "react";
 
 export default function JotaiProviders({
   children,

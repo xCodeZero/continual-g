@@ -4,10 +4,13 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import MainButton from "@/components/common/MainButton";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { motion } from "framer-motion";
 
 import { Toaster } from "@/components/ui/toaster";
 
 import AuthWrapperForm from "@/components/forms/AuthWrapperForm";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
@@ -18,30 +21,58 @@ function NavBar() {
   return (
     <div className="md:sticky md:top-0   md:shadow-none z-20 ">
       {/* DESKTOP */}
-      <div className=" hidden lg:block animate-in fade-in zoom-in bg-white p-4">
+      <div className="hidden lg:block animate-in fade-in zoom-in bg-white p-4">
         <div className="flex justify-between mx-[41px] items-center">
           <div>
-            <img
-              src="/images/Continual-G.png"
-              alt="logo"
-              className="object-cover"
-            />
+            <Link href="/">
+              <img
+                src="/images/Continual-G.png"
+                alt="logo"
+                className="object-cover"
+              />
+            </Link>
           </div>
           <div className="flex gap-[20px] xl:gap-[50px] text-[16px] items-center select-none">
             <p
               className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
             >
-              Home
+              <Link href="/">
+                <Button className="bg-transparent text-black hover:bg-orange-300">
+                  Home
+                </Button>
+              </Link>
             </p>
             <p
               className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
             >
-              Packages
+              <Link href="/packages">
+                <Button className="bg-transparent text-black hover:bg-orange-300">
+                  Packages
+                </Button>
+              </Link>
             </p>
             <p
               className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
             >
-              Contact
+              <Link href="/contact">
+                <Button className="bg-transparent text-black hover:bg-orange-300">
+                  Contact
+                </Button>
+              </Link>
+            </p>
+            <p
+              className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
+            >
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="bg-transparent text-black hover:bg-orange-300">
+                    SIGN UP!
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  <AuthWrapperForm />
+                </DialogContent>
+              </Dialog>
             </p>
 
             {/* Add more links here */}
@@ -94,17 +125,31 @@ function NavBar() {
               <p
                 className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
               >
-                Home
+                <Link href="/">Home</Link>
               </p>
               <p
                 className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
               >
-                Packages
+                <Link href="/packages">Packages</Link>
               </p>
               <p
                 className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
               >
-                Contact
+                <Link href="/contact">Contact</Link>
+              </p>
+              <p
+                className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
+              >
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="bg-transparent text-black hover:bg-orange-300">
+                      SIGN UP!
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <AuthWrapperForm />
+                  </DialogContent>
+                </Dialog>
               </p>
             </div>
           </div>

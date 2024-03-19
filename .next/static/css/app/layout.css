@@ -1205,6 +1205,9 @@ video {
 .w-full {
   width: 100%;
 }
+.w-screen {
+  width: 100vw;
+}
 .min-w-\[8rem\] {
   min-width: 8rem;
 }
@@ -1222,6 +1225,9 @@ video {
 }
 .flex-1 {
   flex: 1 1 0%;
+}
+.flex-initial {
+  flex: 0 1 auto;
 }
 .shrink-0 {
   flex-shrink: 0;
@@ -1302,6 +1308,15 @@ video {
 .items-center {
   align-items: center;
 }
+.items-baseline {
+  align-items: baseline;
+}
+.items-stretch {
+  align-items: stretch;
+}
+.justify-start {
+  justify-content: flex-start;
+}
 .justify-end {
   justify-content: flex-end;
 }
@@ -1313,6 +1328,9 @@ video {
 }
 .justify-around {
   justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
 }
 .gap-1 {
   gap: 0.25rem;
@@ -1335,6 +1353,9 @@ video {
 .gap-6 {
   gap: 1.5rem;
 }
+.gap-64 {
+  gap: 16rem;
+}
 .gap-8 {
   gap: 2rem;
 }
@@ -1353,51 +1374,8 @@ video {
 .gap-\[50px\] {
   gap: 50px;
 }
-.gap-12 {
-  gap: 3rem;
-}
-.gap-96 {
-  gap: 24rem;
-}
-.gap-72 {
-  gap: 18rem;
-}
-.gap-64 {
-  gap: 16rem;
-}
-.gap-9 {
-  gap: 2.25rem;
-}
 .gap-y-16 {
   row-gap: 4rem;
-}
-.gap-x-5 {
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
-}
-.gap-x-6 {
-  -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem;
-}
-.gap-x-7 {
-  -moz-column-gap: 1.75rem;
-       column-gap: 1.75rem;
-}
-.gap-x-8 {
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-}
-.gap-x-9 {
-  -moz-column-gap: 2.25rem;
-       column-gap: 2.25rem;
-}
-.gap-x-10 {
-  -moz-column-gap: 2.5rem;
-       column-gap: 2.5rem;
-}
-.gap-x-11 {
-  -moz-column-gap: 2.75rem;
-       column-gap: 2.75rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1697,6 +1675,15 @@ video {
 .align-middle {
   vertical-align: middle;
 }
+.font-sans {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1768,6 +1755,9 @@ video {
 .capitalize {
   text-transform: capitalize;
 }
+.italic {
+  font-style: italic;
+}
 .leading-none {
   line-height: 1;
 }
@@ -1791,6 +1781,10 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 .text-primary {
   --tw-text-opacity: 1;
@@ -1830,10 +1824,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-green-500 {
-  --tw-text-opacity: 1;
-  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 .underline-offset-4 {
   text-underline-offset: 4px;
@@ -2345,10 +2335,6 @@ video {
 
   .max-sm\:w-\[500px\] {
     width: 500px;
-  }
-
-  .max-sm\:flex-row {
-    flex-direction: row;
   }
 
   .max-sm\:flex-col {
