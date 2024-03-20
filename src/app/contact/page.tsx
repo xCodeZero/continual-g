@@ -11,6 +11,7 @@ import AuthWrapperForm from "@/components/forms/AuthWrapperForm";
 const page = () => {
   return (
     <>
+      <NavBar />
       <motion.div
         className="h-full"
         initial={{ y: "-200vh" }}

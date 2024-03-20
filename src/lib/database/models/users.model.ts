@@ -66,6 +66,18 @@ const UserSchema = new Schema(
       type: String,
       default: "",
     },
+    photo: {
+      type: String,
+      default: "",
+    },
+    coverPhoto: {
+      type: String,
+      default: "",
+    },
+    bio: {
+      type: String,
+      default: "",
+    },
   },
   { timestamps: true } // This will add the createdAt and updatedAt fields
 );

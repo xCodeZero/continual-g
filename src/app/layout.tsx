@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <JotaiProviders>
         <body className={inter.className}>
-          <NavBar />
+          {/* <NavBar /> */}
           {children}
         </body>
       </JotaiProviders>

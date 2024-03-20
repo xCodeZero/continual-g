@@ -30,6 +30,11 @@ export const sidebarItems = [
     link: "/dashboard/cashout",
   },
   {
+    icon: "solar:user-linear",
+    title: "My Profile",
+    link: "/dashboard/profile",
+  },
+  {
     icon: "clarity:cog-line",
     title: "Logout",
     link: "/dashboard/setting",

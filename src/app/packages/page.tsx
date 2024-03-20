@@ -9,6 +9,7 @@ import apiResources from "@/network/resources";
 import { IPackagesResponse } from "@/types";
 import React, { useEffect, useState } from "react";
 import { motion, useInView, useScroll } from "framer-motion";
+import NavBar from "@/components/common/NavBar";
 
 const page = () => {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ const page = () => {
 
   return (
     <>
+      <NavBar />
       <motion.div
         className="h-full"
         initial={{ y: "-200vh" }}

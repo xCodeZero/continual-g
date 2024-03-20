@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/sections/landing/WhyChooseUs";
 export default function Home() {
   return (
     <main>
+      <NavBar />
       <div className="flex flex-col gap-32  my-16 px-4 md:px-16">
         <HeroSection />
         <WhyChooseUs />

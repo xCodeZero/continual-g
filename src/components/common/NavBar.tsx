@@ -14,6 +14,7 @@ import { Button } from "../ui/button";
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
+  const [open, setOpen] = useState(false);
   const toggleMenu = () => {
     setMenu(!menu);
   };

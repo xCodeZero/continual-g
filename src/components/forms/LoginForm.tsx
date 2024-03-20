@@ -22,6 +22,7 @@ function LoginForm({ setIsLogin }: { setIsLogin: (value: boolean) => void }) {
     try {
       if (email && password) {
         setLoading(true);
+
         const loginRes = await apiClient.post(
           apiResources.login,
           "/",

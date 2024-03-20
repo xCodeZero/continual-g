@@ -9,6 +9,8 @@ const apiResources = {
   earnings: "/earnings",
   cashout: "/cashout",
   users: "/users",
+  auth: "/auth",
+  profile: "/profile",
 };
 
 export default apiResources;
