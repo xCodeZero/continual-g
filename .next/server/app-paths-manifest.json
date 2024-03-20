@@ -1,15 +1,11 @@
 {
   "/api/users/route": "app/api/users/route.js",
-  "/api/statistics/route": "app/api/statistics/route.js",
-  "/api/statistics/chart/route": "app/api/statistics/chart/route.js",
-  "/api/orders/route": "app/api/orders/route.js",
-  "/api/transactions/route": "app/api/transactions/route.js",
-  "/api/earnings/route": "app/api/earnings/route.js",
   "/api/cashout/route": "app/api/cashout/route.js",
-  "/dashboard/profile/page": "app/dashboard/profile/page.js",
+  "/api/statistics/route": "app/api/statistics/route.js",
+  "/icon.png/route": "app/icon.png/route.js",
   "/dashboard/transactions/page": "app/dashboard/transactions/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/orders/page": "app/dashboard/orders/page.js",
-  "/dashboard/earnings/page": "app/dashboard/earnings/page.js",
+  "/dashboard/packages/page": "app/dashboard/packages/page.js",
   "/dashboard/cashout/page": "app/dashboard/cashout/page.js"
 }

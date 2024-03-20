@@ -135,6 +135,7 @@ const CashOutForm = () => {
             accountId: user.accountId,
             tax: taxFee,
             fee: processsingFee,
+            orginalAmount: amount,
           },
           toast
         );

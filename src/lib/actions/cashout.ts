@@ -24,10 +24,13 @@ export async function createCashout(cashoutsData: CreateCashoutData) {
     // Query the `ashoutsData` collection using the converted ObjectId
     const userData = await User.findOne({ _id: userIdObject });
 
-    if (cashoutsData.amount < cashoutsData.fee)
+    if (cashoutsData.originalAmount <= cashoutsData.fee)
       handleError(
         "Amount must not be lesser than processing fee. Processing Fee: ₦1,500"
       );
+
+    if (cashoutsData.amount < 1)
+      handleError("Total amount cannot be negative value.");
 
     if (userData.creditCoins <= 30000)
       handleError("₦30,000 must remain in your account");

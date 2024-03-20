@@ -49,6 +49,7 @@ declare type CreateCashoutData = {
   bankAccount: string;
   bankAccountName: string;
   bank: string;
+  originalAmount: number;
   status?: "PENDING" | "SUCCESS" | "FAIL";
 };
 
