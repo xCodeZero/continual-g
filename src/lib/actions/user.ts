@@ -98,10 +98,7 @@ export async function getUserAffiliateById(userId: string) {
   }
 }
 
-export async function updateUser(
-  userId: string,
-  user: Partial<UpdateUserParams>
-) {
+export async function updateUser(userId: any, user: Partial<UpdateUserParams>) {
   try {
     await connectToDatabase();
 

@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React from "react";
 import apiResources from "@/network/resources";
@@ -11,6 +12,8 @@ import { FaEye, FaEyeSlash, FaEdit } from "react-icons/fa";
 import { IStatistics } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { UploadButton } from "@/utils/uploadthing";
 
 const numberWithCommas = (x: number) => {
   return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -20,6 +23,9 @@ function Profile() {
   const [user, setUser] = useAtom(ATOMS.user);
   const [loading, setLoading] = useState(false);
   const [useStats, setUserStats] = useState<IStatistics>();
+
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHoveredProfile, setIsHoveredProfile] = useState(false);
 
   const data = [
     {
@@ -59,6 +65,11 @@ function Profile() {
           bankAccount: string;
           bankAccountName: string;
           bank: string;
+          bio: string;
+          photo: string;
+          coverPhoto: string;
+          address: string;
+          phoneNumber: string;
         }>(apiResources.users, "/");
         // Set to global state
         setUser(res);
@@ -88,24 +99,59 @@ function Profile() {
     <>
       <div className="flex justify-center w-full mt-12 items-center bg-darkCyan max-h-screen lg:w-full max-sm:w-[520px] md:w-[930px]">
         <div className="w-[100rem] overflow-hidden rounded-2xl text-center bg-white shadow-2xl z-10">
-          <div className="">
-            <Image
-              className="w-full h-[25rem] border-[5px] border-white object-contain"
-              src="https://utfs.io/f/ab9bc0ac-367d-4811-8566-899588f170b5-1e.jpg"
-              alt=""
-              width={300}
-              height={300}
-            />
+          <div className="hover:opacity-40 cursor-pointer">
+            <Link href="/dashboard/profile/update">
+              <Image
+                className="w-full h-[25rem] border-[5px] border-white object-contain"
+                src={
+                  user?.coverPhoto === ""
+                    ? "https://utfs.io/f/cc4951b4-a912-4441-85b5-d0a8c506e205-c2buqn.jpg"
+                    : user?.coverPhoto
+                }
+                alt=""
+                width={300}
+                height={300}
+                // onMouseEnter={() => setIsHovered(true)}
+                // onMouseLeave={() => setIsHovered(false)}
+              />
+            </Link>
+
+            {isHovered && (
+              <div className="absolute bottom-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <UploadButton
+                  className="z-1"
+                  endpoint="imageUploader"
+                  onClientUploadComplete={(res) => {
+                    // Do something with the response
+                    console.log("Files: ", res);
+                    alert("Upload Completed");
+                  }}
+                  onUploadError={(error: Error) => {
+                    // Do something with the error.
+                    alert(`ERROR! ${error.message}`);
+                  }}
+                />
+                {/* </button> */}
+              </div>
+            )}
           </div>
 
-          <div className="flex justify-center -mt-[3.3225rem] z-10">
-            <Image
-              className="w-[10rem] h-[10rem] rounded-full border-[5px] border-white object-cover"
-              src="https://utfs.io/f/ab9bc0ac-367d-4811-8566-899588f170b5-1e.jpg"
-              alt=""
-              width={300}
-              height={300}
-            />
+          <div className="flex justify-center -mt-[3.3225rem] z-10 hover:opacity-40 cursor-pointer">
+            <Link href="/dashboard/profile/update">
+              <Image
+                className="w-[10rem] h-[10rem] rounded-full border-[5px] border-white object-cover"
+                src={
+                  user?.photo === ""
+                    ? "https://utfs.io/f/cc4951b4-a912-4441-85b5-d0a8c506e205-c2buqn.jpg"
+                    : user?.photo
+                }
+                alt=""
+                width={300}
+                height={300}
+                // onMouseEnter={() => setIsHoveredProfile(true)}
+                // onMouseLeave={() => setIsHoveredProfile(false)}
+              />
+            </Link>
           </div>
 
           <div className="px-10 py-4">
@@ -127,50 +173,62 @@ function Profile() {
                 <div className="text-grayishBlue py-[0.3rem] text-2xl font-bold text-orange-600">
                   <Label
                     htmlFor="email"
-                    className="text-black text-2xl font-bold"
+                    className="text-black text-sm font-bold"
                   >
-                    Current Earning Balance:{" "}
+                    Current Balance:
                   </Label>
-                  <p className="font-bold  ml-5">{formatted}</p>
+                  <p className="font-bold text-3xl">{formatted}</p>
                 </div>
                 <Button className="bg-primary hover:bg-orange-300">
-                  <FaEdit className="ml-2 mr-6" /> EDIT PROFILE
+                  <Link
+                    href="/dashboard/profile/update"
+                    className="flex flex-row"
+                  >
+                    <FaEdit className="ml-2 mr-6" /> EDIT PROFILE
+                  </Link>
                 </Button>
               </div>
-              {data.map((stat, index) =>
-                loading ? (
-                  <div key={1} className="flex gap-8 p-8 w-full">
-                    <Skeleton className="w-full h-16" />
-                  </div>
-                ) : (
-                  <div className="flex flex-row text-[1.125rem] px-[1.1rem] py-2  items-center">
-                    {index === 1 && (
-                      <>
-                        <Label htmlFor="email">{stat?.item}: </Label>
-                        <div className="text-grayishBlue py-[0.3rem] text-2xl font-bold text-orange-600">
-                          <p className="font-bold  ml-5">{stat?.value}</p>
+              <div>
+                {data.map((stat, index) =>
+                  loading ? (
+                    <div key={index} className="flex gap-8 p-8 w-full">
+                      <Skeleton className="w-full h-16" />
+                    </div>
+                  ) : (
+                    <div
+                      className="flex flex-row text-[1.125rem] px-[1.1rem] py-2  items-center"
+                      key={index}
+                    >
+                      {index === 1 && (
+                        <div>
+                          <Label htmlFor="item" className="">
+                            {stat?.item}:{" "}
+                          </Label>
+                          <div className="text-grayishBlue py-[0.3rem] text-3xl font-bol">
+                            <p className="font-bold">{stat?.value}</p>
+                          </div>
                         </div>
-                      </>
-                    )}
-                  </div>
-                )
-              )}
+                      )}
+                    </div>
+                  )
+                )}
+              </div>
 
               <div className="flex flex-row text-[1.125rem] px-[1.1rem] py-2  items-center">
                 <Label htmlFor="email">Email address: </Label>
-                <div className="text-grayishBlue py-[0.3rem] text-2xl font-bold text-orange-600">
+                <div className="text-grayishBlue py-[0.3rem] text-2xl font-bold">
                   <p className="font-bold  ml-5">{user?.email}</p>
                 </div>
               </div>
               <div className="flex flex-row text-[1.125rem] px-[1.1rem] py-2  items-center">
                 <Label htmlFor="email">Account ID: </Label>
-                <div className="text-grayishBlue py-[0.3rem] text-2xl font-bold text-orange-600">
+                <div className="text-grayishBlue py-[0.3rem] text-2xl font-bold">
                   <p className="font-bold  ml-5">{user?.accountId}</p>
                 </div>
               </div>
               <div className="flex flex-row text-[1.125rem] px-[1.1rem] py-2  items-center">
                 <Label htmlFor="email">Bank Account: </Label>
-                <div className="text-grayishBlue py-[0.3rem] text-2xl font-bold text-orange-600">
+                <div className="text-grayishBlue py-[0.3rem] text-2xl font-bol">
                   <p className="font-bold  ml-5 flex flex-row">
                     {showBankInfo ? user?.bankAccount : "************"}
                     <span
@@ -184,7 +242,7 @@ function Profile() {
               </div>
               <div className="flex flex-row text-[1.125rem] px-[1.1rem] py-2  items-center">
                 <Label htmlFor="email">Bank: </Label>
-                <div className="text-grayishBlue py-[0.3rem] text-2xl font-bold text-orange-600">
+                <div className="text-grayishBlue py-[0.3rem] text-2xl font-bol">
                   <p className="font-bold  ml-5 flex flex-row">{user?.bank}</p>
                 </div>
               </div>

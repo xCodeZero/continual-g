@@ -21,6 +21,11 @@ declare type UpdateUserParams = {
   userRole: number;
   phoneNumber: string;
   address: string;
+  bio: string;
+  photo: string;
+  coverPhoto: string;
+  bankAccount: string;
+  bank: string;
 };
 
 declare type CreateTransactionData = {

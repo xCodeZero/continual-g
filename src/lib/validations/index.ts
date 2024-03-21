@@ -117,9 +117,45 @@ const CreateCashoutInputValidation = z.object({
     }),
 });
 
+const UpdateInfoInputValidation = z.object({
+  firstName: z
+    .string()
+    .min(3, {
+      message: "First name must be at least 3 characters.",
+    })
+    .max(50, {
+      message: "First name must be at most 50 characters.",
+    }),
+  lastName: z
+    .string()
+    .min(3, {
+      message: "Last name must be at least 3 characters.",
+    })
+    .max(50, {
+      message: "Last name must be at most 50 characters.",
+    }),
+  phoneNumber: z
+    .string()
+    .min(3, {
+      message: "Please provide a contact number.",
+    })
+    .max(50, {
+      message: "Please provide a valid contact number",
+    }),
+  address: z
+    .string()
+    .min(3, {
+      message: "Please provide a address.",
+    })
+    .max(50, {
+      message: "Please provide a valide address.",
+    }),
+});
+
 export {
   CreateUserInputValidation,
   LoginUserInputValidation,
   CreateOrderInputValidation,
   CreateCashoutInputValidation,
+  UpdateInfoInputValidation,
 };

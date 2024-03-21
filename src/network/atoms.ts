@@ -16,6 +16,11 @@ export const ATOMS = {
     bankAccount: "",
     bankAccountName: "",
     bank: "",
+    bio: "",
+    coverPhoto: "",
+    photo: "",
+    phoneNumber: "",
+    address: "",
   }),
   sidebarMinimized: atom(sidebarMinimizedDefault),
 };

@@ -1,11 +1,6 @@
 {
+  "/api/uploadthing/route": "app/api/uploadthing/route.js",
   "/api/users/route": "app/api/users/route.js",
-  "/api/cashout/route": "app/api/cashout/route.js",
-  "/api/statistics/route": "app/api/statistics/route.js",
-  "/icon.png/route": "app/icon.png/route.js",
-  "/dashboard/transactions/page": "app/dashboard/transactions/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/orders/page": "app/dashboard/orders/page.js",
-  "/dashboard/packages/page": "app/dashboard/packages/page.js",
-  "/dashboard/cashout/page": "app/dashboard/cashout/page.js"
+  "/dashboard/profile/page": "app/dashboard/profile/page.js",
+  "/dashboard/profile/update/page": "app/dashboard/profile/update/page.js"
 }

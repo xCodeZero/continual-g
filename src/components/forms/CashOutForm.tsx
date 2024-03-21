@@ -37,6 +37,11 @@ const CashOutForm = () => {
       bankAccount: string;
       bankAccountName: string;
       bank: string;
+      bio: string;
+      address: string;
+      phoneNumber: string;
+      photo: string;
+      coverPhoto: string;
     }>(apiResources.users, "/");
     // Set to global state
     setUser(res);
@@ -58,6 +63,11 @@ const CashOutForm = () => {
           bankAccount: string;
           bankAccountName: string;
           bank: string;
+          bio: string;
+          address: string;
+          phoneNumber: string;
+          photo: string;
+          coverPhoto: string;
         }>(apiResources.users, "/");
         // Set to global state
         setUser(res);
