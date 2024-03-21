@@ -36,6 +36,11 @@ function DashboardNavigation() {
           bankAccount: string;
           bankAccountName: string;
           bank: string;
+          bio: string;
+          photo: string;
+          coverPhoto: string;
+          address: string;
+          phoneNumber: string;
         }>(apiResources.users, "/");
         // Set to global state
         setUser(res);

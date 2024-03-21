@@ -1,7 +1,4 @@
 {
-  "/api/uploadthing/route": "app/api/uploadthing/route.js",
-  "/api/users/route": "app/api/users/route.js",
-  "/icon.png/route": "app/icon.png/route.js",
-  "/dashboard/profile/page": "app/dashboard/profile/page.js",
-  "/dashboard/profile/update/page": "app/dashboard/profile/update/page.js"
+  "/dashboard/profile/update/page": "app/dashboard/profile/update/page.js",
+  "/dashboard/profile/page": "app/dashboard/profile/page.js"
 }
