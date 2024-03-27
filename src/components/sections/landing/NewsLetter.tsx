@@ -6,6 +6,7 @@ import AuthWrapperForm from "@/components/forms/AuthWrapperForm";
 import Header from "@/components/common/Header";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 function NewsLetter() {
   const [email, setEmail] = useState("");
@@ -72,17 +73,11 @@ function NewsLetter() {
         <div className="relative w-full md:max-w-[600px]">
           <p className=" h-[70px] text-white font-semibold text-2xl"></p>
           <div className="block mt-3 md:mt-0 md:absolute md:top-3 right-3">
-            <Dialog>
-              <DialogTrigger asChild>
-                {/* <MainButton text="GET STARTED" classes="w-[580px]" /> */}
-                <Button className="w-[580px] bg-primary hover:bg-orange-300">
-                  GET STARTED
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px]">
-                <AuthWrapperForm />
-              </DialogContent>
-            </Dialog>
+            <Link href="/sign-in">
+              <Button className="w-[580px] bg-primary hover:bg-orange-300">
+                Get Started!
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

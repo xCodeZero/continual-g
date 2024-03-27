@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 import AuthWrapperForm from "@/components/forms/AuthWrapperForm";
 import Header from "@/components/common/Header";
+import Link from "next/link";
 
 function HeroSection() {
   return (
@@ -34,14 +35,11 @@ function HeroSection() {
           supplement with Glyteine.
         </p>
         <div>
-          <Dialog>
-            <DialogTrigger asChild>
-              <MainButton text="Get Started" classes="" />
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
-              <AuthWrapperForm />
-            </DialogContent>
-          </Dialog>
+          <Link href="/sign-in">
+            <button className="w-[300px] rounded-md border-black bg-primary p-4 text-center  text-white">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
       <div>

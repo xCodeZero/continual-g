@@ -25,6 +25,11 @@ export const sidebarItems = [
     link: "/dashboard/earnings",
   },
   {
+    icon: "mingcute:bank-card-fill",
+    title: "Topup History",
+    link: "/dashboard/topuphistory",
+  },
+  {
     icon: "octicon:organization-16",
     title: "Cash Out",
     link: "/dashboard/cashout",

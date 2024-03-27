@@ -27,12 +27,10 @@ const UserSchema = new Schema(
     phoneNumber: {
       type: String,
       required: true,
-      unique: true,
     },
     address: {
       type: String,
       required: true,
-      unique: true,
     },
     creditCoins: {
       type: Number,

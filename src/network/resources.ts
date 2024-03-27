@@ -12,6 +12,7 @@ const apiResources = {
   auth: "/auth",
   profile: "/profile",
   updateprofile: "/updateprofile",
+  topup: "/topup",
 };
 
 export default apiResources;

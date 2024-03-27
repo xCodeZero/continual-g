@@ -117,6 +117,25 @@ const CreateCashoutInputValidation = z.object({
     }),
 });
 
+const CreatePaymentInputValidation = z.object({
+  source_id: z
+    .string()
+    .min(3, {
+      message: "Transaction number must be at least 1 characters.",
+    })
+    .max(50, {
+      message: "Transaction number must be at most 50 characters.",
+    }),
+  amount: z
+    .string()
+    .min(1, {
+      message: "Amount must be at least 3 characters.",
+    })
+    .max(50, {
+      message: "Amount must be at most 50 characters.",
+    }),
+});
+
 const UpdateInfoInputValidation = z.object({
   firstName: z
     .string()
@@ -158,4 +177,5 @@ export {
   CreateOrderInputValidation,
   CreateCashoutInputValidation,
   UpdateInfoInputValidation,
+  CreatePaymentInputValidation,
 };

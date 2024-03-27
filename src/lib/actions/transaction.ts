@@ -13,8 +13,6 @@ import {
 import Earnings from "../database/models/earnings.model";
 
 import mongoose from "mongoose";
-import Cashout from "../database/models/cashout.model";
-import { User } from "lucide-react";
 
 export async function createTransaction(
   transactionData: CreateTransactionData

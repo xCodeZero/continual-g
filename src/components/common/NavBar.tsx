@@ -52,7 +52,7 @@ function NavBar() {
                 </Button>
               </Link>
             </p>
-            <p
+            {/* <p
               className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
             >
               <Link href="/contact">
@@ -60,20 +60,15 @@ function NavBar() {
                   Contact
                 </Button>
               </Link>
-            </p>
+            </p> */}
             <p
               className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
             >
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button className="bg-transparent text-black hover:bg-orange-300">
-                    SIGN UP!
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px]">
-                  <AuthWrapperForm />
-                </DialogContent>
-              </Dialog>
+              <Link href="/sign-up">
+                <Button className="bg-transparent text-black hover:bg-orange-300">
+                  Sign UP!
+                </Button>
+              </Link>
             </p>
 
             {/* Add more links here */}
@@ -138,20 +133,13 @@ function NavBar() {
               >
                 <Link href="/contact">Contact</Link>
               </p>
-              <p
-                className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
-              >
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button className="bg-transparent text-black hover:bg-orange-300">
-                      SIGN UP!
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-[425px]">
-                    <AuthWrapperForm />
-                  </DialogContent>
-                </Dialog>
-              </p>
+              <Link href="/sign-up">
+                <p
+                  className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
+                >
+                  <Link href="/sign-up">Sign Up!</Link>
+                </p>
+              </Link>
             </div>
           </div>
         ) : (

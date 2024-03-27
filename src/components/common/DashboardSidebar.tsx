@@ -196,7 +196,7 @@ function DashboardSidebar({
 
         <section className="">
           <div className="flex flex-col gap-6 mt-[2rem]">
-            <div>
+            {/* <div>
               <Dialog>
                 <DialogTrigger>
                   <SidebarElement
@@ -233,6 +233,17 @@ function DashboardSidebar({
                   </DialogHeader>
                 </DialogContent>
               </Dialog>
+            </div> */}
+            <div>
+              <Link href="/dashboard/topup">
+                <SidebarElement
+                  icon="mingcute:bank-card-fill"
+                  title="Topup"
+                  minimize={minimize}
+                  currentPath={currentPath}
+                  link={"unknown"}
+                />
+              </Link>
             </div>
             <div onClick={signOut} className="mb-20">
               <SidebarElement

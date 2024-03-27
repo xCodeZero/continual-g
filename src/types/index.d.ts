@@ -36,6 +36,14 @@ declare type CreateTransactionData = {
   status?: "PENDING" | "SUCCESS" | "FAIL";
 };
 
+declare type CreatTopupData = {
+  userId: Types.ObjectId;
+  source: "CREDIT" | "ORDER";
+  source_id: string;
+  amount: number;
+  status?: "PENDING" | "SUCCESS" | "FAIL";
+};
+
 declare type CreateEarningsData = {
   userId: Types.ObjectId;
   source: string;
@@ -139,6 +147,18 @@ export interface ITransactionResponse {
   source?: string;
   source_id?: string;
   amount?: number;
+  status?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export interface ITopupResponse {
+  _id?: string;
+  userId?: string;
+  source?: string;
+  source_id?: string;
+  amount?: number;
+  image?: string;
   status?: string;
   createdAt?: Date;
   updatedAt?: Date;
