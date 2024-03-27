@@ -1,1 +1,4 @@
-{}
+{
+  "/(auth)/sign-up/[[...sign-up]]/page": "app/(auth)/sign-up/[[...sign-up]]/page.js",
+  "/icon.png/route": "app/icon.png/route.js"
+}

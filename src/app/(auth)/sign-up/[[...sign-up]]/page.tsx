@@ -82,7 +82,7 @@ const page = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen w-screen bg-[url('/images/3.jpg')] bg-cover bg-center">
+    <div className="flex items-center justify-center h-screen w-screen bg-gradient-to-tr from-[#ffffff] to-[#fddbc6] ">
       <div className="flex  items-center justify-center h-screen w-screen">
         <div className="flex h-full w-full  flex-col items-center   p-20 max-sm:w-full">
           <Link href="/">
@@ -178,7 +178,7 @@ const page = () => {
             <div className="my-4 flex w-full flex-col">
               <button
                 onClick={handleRegister}
-                className="my-2 flex w-full items-center justify-center rounded-md border-black bg-white p-4 text-center  text-black"
+                className="my-2 flex w-full items-center justify-center rounded-md border-black bg-primary p-4 text-center  text-black"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -189,7 +189,7 @@ const page = () => {
               </button>
               <Link href="/sign-in">
                 <div className="flex w-full items-center justify-center">
-                  <p className="text-sm font-normal text-white">
+                  <p className="text-sm font-normal text-orange-600">
                     You already have account?{" "}
                     <span className="cursor-pointer font-semibold underline underline-offset-2">
                       Sign In!
