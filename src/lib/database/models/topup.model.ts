@@ -15,6 +15,7 @@ const TopupSchema = new Schema(
     source_id: {
       type: String,
       required: true,
+      unique: true,
     },
     amount: {
       type: Number,
