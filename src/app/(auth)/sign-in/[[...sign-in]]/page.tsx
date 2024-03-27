@@ -54,15 +54,15 @@ const page = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen w-screen bg-[url('/images/2.jpg')] bg-cover bg-center">
+    <div className="flex ih-full w-full flex-col items-center bg-gradient-to-tr from-[#ffffff] to-[#fddbc6]">
       <div className="flex  items-center justify-center h-screen w-screen">
         <div className="flex h-full w-full  flex-col items-center   p-20 max-sm:w-full">
           <Link href="/">
             <Image
               src="/images/continualg/Continual-logo.png"
               alt="register"
-              height={528}
-              width={528}
+              height={328}
+              width={328}
               className="object-contain max-sm:w-full mb-14"
             />
           </Link>
@@ -99,7 +99,7 @@ const page = () => {
             <div className="my-4 flex w-full flex-col">
               <button
                 onClick={handleLogin}
-                className="my-2 flex w-full items-center justify-center rounded-md border-black bg-white p-4 text-center  text-black"
+                className="my-2 flex w-full items-center justify-center rounded-md border-black bg-primary p-4 text-center  text-black"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -110,7 +110,7 @@ const page = () => {
               </button>
               <Link href="/sign-up">
                 <div className="flex w-full items-center justify-center">
-                  <p className="text-sm font-normal text-white">
+                  <p className="text-sm font-normal text-orange-600">
                     You don&apos;t have account yet?{" "}
                     <span className="cursor-pointer font-semibold underline underline-offset-2">
                       Sign Up!
