@@ -234,7 +234,7 @@ function Profile() {
 
   return (
     <>
-      <div className="flex justify-center w-full mt-12 items-center bg-darkCyan max-h-screen lg:w-full max-sm:w-[520px] md:w-[930px]">
+      <div className="flex justify-center w-full mt-60 items-center bg-darkCyan max-h-screen lg:w-[700px] max-sm:w-[520px] md:w-[530px]">
         <div className="w-[100rem] overflow-hidden rounded-2xl text-center bg-white shadow-2xl z-10">
           <div className="">
             <Image

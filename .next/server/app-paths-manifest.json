@@ -1,7 +1,12 @@
 {
-  "/dashboard/topuphistory/page": "app/dashboard/topuphistory/page.js",
+  "/api/statistics/route": "app/api/statistics/route.js",
+  "/api/users/route": "app/api/users/route.js",
+  "/api/uploadthing/route": "app/api/uploadthing/route.js",
+  "/api/cashout/route": "app/api/cashout/route.js",
   "/dashboard/profile/page": "app/dashboard/profile/page.js",
   "/dashboard/topup/page": "app/dashboard/topup/page.js",
+  "/dashboard/bank/page": "app/dashboard/bank/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/bank/page": "app/dashboard/bank/page.js"
+  "/dashboard/profile/update/page": "app/dashboard/profile/update/page.js",
+  "/dashboard/cashout/page": "app/dashboard/cashout/page.js"
 }
