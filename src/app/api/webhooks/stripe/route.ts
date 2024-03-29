@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     const { metadata } = event.data.object;
 
     const transaction = {
-      userId: metadata?.userId || "",
+      userId: metadata?.userId,
       source: "CREDIT" as "CREDIT",
       source_id: "N/A",
       amount: Number(metadata?.price) || 0,
