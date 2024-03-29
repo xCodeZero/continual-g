@@ -1,7 +1,16 @@
 {
+  "/icon.png/route": "app/icon.png/route.js",
+  "/api/users/route": "app/api/users/route.js",
+  "/api/topup/route": "app/api/topup/route.js",
+  "/api/statistics/chart/route": "app/api/statistics/chart/route.js",
+  "/api/statistics/route": "app/api/statistics/route.js",
+  "/api/orders/route": "app/api/orders/route.js",
+  "/api/transactions/route": "app/api/transactions/route.js",
+  "/api/cashout/route": "app/api/cashout/route.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/topup/page": "app/dashboard/topup/page.js",
   "/dashboard/transactions/page": "app/dashboard/transactions/page.js",
   "/dashboard/topuphistory/page": "app/dashboard/topuphistory/page.js",
-  "/dashboard/bank/page": "app/dashboard/bank/page.js"
+  "/dashboard/bank/page": "app/dashboard/bank/page.js",
+  "/dashboard/cashout/page": "app/dashboard/cashout/page.js"
 }

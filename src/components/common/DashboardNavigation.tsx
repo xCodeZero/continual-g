@@ -105,7 +105,12 @@ function DashboardNavigation() {
                   <div className="flex gap-2 items-center">
                     <Avatar>
                       <AvatarImage
-                        src="https://github.com/shadcn.png"
+                        className="object-cover"
+                        src={
+                          user?.photo === ""
+                            ? "https://github.com/shadcn.png"
+                            : user?.photo
+                        }
                         alt="@shadcn"
                       />
                       <AvatarFallback>CN</AvatarFallback>

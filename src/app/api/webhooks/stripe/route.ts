@@ -38,7 +38,8 @@ export async function POST(request: Request) {
       userId: metadata?.userId,
       source: "CREDIT" as "CREDIT",
       source_id: "N/A",
-      image: "N/A",
+      image:
+        "https://utfs.io/f/099d9d3e-7796-4352-8f2c-4756709cbb7a-5sd1uk.png",
       amount: Number(metadata?.price) || 0,
       status: "SUCCESS" as "SUCCESS",
     };
