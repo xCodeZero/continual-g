@@ -41,6 +41,7 @@ declare type CreatTopupData = {
   source: "CREDIT" | "ORDER";
   source_id: string;
   amount: number;
+  image: string;
   status?: "PENDING" | "SUCCESS" | "FAIL";
 };
 

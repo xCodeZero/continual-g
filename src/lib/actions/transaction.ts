@@ -163,7 +163,7 @@ export async function checkoutCredits(transaction: CheckoutTransactionParams) {
       userId: transaction.userId,
     },
     mode: "payment",
-    success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/dashboard`,
+    success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/dashboard/topuphistory`,
     cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/dashboard`,
   });
 

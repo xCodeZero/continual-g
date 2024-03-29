@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { createTransaction } from "@/lib/actions/transaction";
 import { updateCredits } from "@/lib/actions/user";
 import stripe from "stripe";
+import { createPayment } from "@/lib/actions/topup";
 
 export async function POST(request: Request) {
   const body = await request.text();
@@ -32,10 +33,24 @@ export async function POST(request: Request) {
       amount: Number(metadata?.price) || 0,
       status: "SUCCESS" as "SUCCESS",
     };
-    //await updateCredits(metadata?.userId as string, Number(metadata?.price));
-    const newTransaction = await createTransaction(transaction);
 
-    return NextResponse.json({ message: "OK", transaction: newTransaction });
+    const payment = {
+      userId: metadata?.userId,
+      source: "CREDIT" as "CREDIT",
+      source_id: "N/A",
+      image: "N/A",
+      amount: Number(metadata?.price) || 0,
+      status: "SUCCESS" as "SUCCESS",
+    };
+    await updateCredits(metadata?.userId as string, Number(metadata?.price));
+    const newTransaction = await createTransaction(transaction);
+    const newTopup = await createPayment(payment);
+
+    return NextResponse.json({
+      message: "OK",
+      transaction: newTransaction,
+      payment: newTopup,
+    });
   }
 
   return new Response("", { status: 200 });

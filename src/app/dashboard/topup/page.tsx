@@ -13,17 +13,53 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { ChangeEvent, useEffect, useState } from "react";
-import { sidebarItems } from "@/lib/constants";
-import { usePathname, useRouter } from "next/navigation";
+import apiResources from "@/network/resources";
+import { apiClient } from "@/network";
+import { ATOMS } from "@/network/atoms";
+import { useAtom } from "jotai";
 
 const TopUp = () => {
-  const router = useRouter();
   const [amount, setAmount] = useState(0);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useAtom(ATOMS.user);
+  const [loading, setLoading] = useState(false);
 
   const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
     setAmount(Number(e?.target?.value));
   };
+
+  useEffect(() => {
+    async function fetch() {
+      try {
+        const res = await apiClient.get<{
+          affiliateId: string;
+          accountId: string;
+          firstName: string;
+          lastName: string;
+          email: string;
+          creditCoins: number;
+          creditBalance: number;
+          userRole: number;
+          bankAccount: string;
+          bankAccountName: string;
+          bank: string;
+          bio: string;
+          address: string;
+          phoneNumber: string;
+          photo: string;
+          coverPhoto: string;
+        }>(apiResources.users, "/");
+        // Set to global state
+        setUser(res);
+        setLoading(false);
+      } catch (err) {
+        setLoading(false);
+      }
+    }
+
+    fetch();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
