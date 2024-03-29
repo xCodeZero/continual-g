@@ -1,8 +1,13 @@
 {
-  "/api/webhooks/stripe/route": "app/api/webhooks/stripe/route.js",
+  "/api/users/route": "app/api/users/route.js",
+  "/icon.png/route": "app/icon.png/route.js",
+  "/api/statistics/chart/route": "app/api/statistics/chart/route.js",
+  "/api/statistics/route": "app/api/statistics/route.js",
+  "/api/orders/route": "app/api/orders/route.js",
+  "/api/transactions/route": "app/api/transactions/route.js",
   "/dashboard/topup/page": "app/dashboard/topup/page.js",
   "/dashboard/transactions/page": "app/dashboard/transactions/page.js",
-  "/dashboard/topuphistory/page": "app/dashboard/topuphistory/page.js",
   "/dashboard/orders/page": "app/dashboard/orders/page.js",
-  "/dashboard/packages/page": "app/dashboard/packages/page.js"
+  "/dashboard/packages/page": "app/dashboard/packages/page.js",
+  "/dashboard/page": "app/dashboard/page.js"
 }
