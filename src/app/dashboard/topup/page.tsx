@@ -84,15 +84,6 @@ const TopUp = () => {
                 </DialogHeader>
               </DialogContent>
             </Dialog>
-            {/* <Link href="/dashboard/topup">
-              <Image
-                src="/images/continualg/credit-card.png"
-                alt=""
-                width={300}
-                height={300}
-                className="mx-auto"
-              />
-            </Link> */}
           </div>
           <p className="text-center text-lg font-semibold text-orange-600">
             Stripe Payment
