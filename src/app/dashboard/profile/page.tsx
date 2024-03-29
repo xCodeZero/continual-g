@@ -164,7 +164,11 @@ function Profile() {
               {user?.accountId}
             </div>
             <p className="font-bold italic">
-              “Could Not Have Done It Without My CONTINUAL-G®”
+              “
+              {user.bio === ""
+                ? "Could Not Have Done It Without My CONTINUAL-G®"
+                : user.bio}
+              ”
             </p>
 
             <div className="border-b -mx-10 my-4" />
