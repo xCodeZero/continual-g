@@ -1,14 +1,17 @@
 {
-  "/(auth)/sign-up/[[...sign-up]]/page": "app/(auth)/sign-up/[[...sign-up]]/page.js",
   "/(auth)/sign-in/[[...sign-in]]/page": "app/(auth)/sign-in/[[...sign-in]]/page.js",
-  "/api/login/route": "app/api/login/route.js",
-  "/api/statistics/chart/route": "app/api/statistics/chart/route.js",
+  "/api/webhooks/stripe/route": "app/api/webhooks/stripe/route.js",
   "/api/users/route": "app/api/users/route.js",
+  "/api/cashout/route": "app/api/cashout/route.js",
   "/api/statistics/route": "app/api/statistics/route.js",
-  "/api/orders/route": "app/api/orders/route.js",
-  "/dashboard/topup/page": "app/dashboard/topup/page.js",
-  "/dashboard/profile/update/page": "app/dashboard/profile/update/page.js",
+  "/api/transactions/route": "app/api/transactions/route.js",
+  "/api/topup/route": "app/api/topup/route.js",
+  "/api/uploadthing/route": "app/api/uploadthing/route.js",
   "/dashboard/cashout/page": "app/dashboard/cashout/page.js",
+  "/dashboard/profile/page": "app/dashboard/profile/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/profile/page": "app/dashboard/profile/page.js"
+  "/dashboard/topup/page": "app/dashboard/topup/page.js",
+  "/dashboard/transactions/page": "app/dashboard/transactions/page.js",
+  "/dashboard/topuphistory/page": "app/dashboard/topuphistory/page.js",
+  "/dashboard/bank/page": "app/dashboard/bank/page.js"
 }

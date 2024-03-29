@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { NextResponse } from "next/server";
 import stripe from "stripe";
 import { createTransaction } from "@/lib/actions/transaction";
@@ -22,13 +23,15 @@ export async function POST(request: Request) {
 
   // CREATE
   if (eventType === "checkout.session.completed") {
-    const { metadata } = event.data.object;
+    // const { metadata } = event.data.object;
+
+    const { id, amount_total, metadata } = event.data.object;
 
     const transaction = {
       userId: metadata?.userId,
       source: "CREDIT" as "CREDIT",
-      source_id: "N/A",
-      amount: Number(metadata?.price) || 0,
+      source_id: id,
+      amount: Number(amount_total) || 0,
       status: "SUCCESS" as "SUCCESS",
     };
     await updateCredits(metadata?.userId as string, Number(metadata?.price));
