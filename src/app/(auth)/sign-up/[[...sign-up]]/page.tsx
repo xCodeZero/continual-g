@@ -110,7 +110,7 @@ const page = () => {
                 id="referrerId"
                 name="referrerId"
                 type="text"
-                placeholder="Enter Affiliate ID number"
+                placeholder="Enter Affiliate ID"
                 value={affiliateId.toUpperCase()}
                 className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none"
                 disabled={isSubmitting}

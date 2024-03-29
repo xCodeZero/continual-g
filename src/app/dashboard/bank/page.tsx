@@ -3,7 +3,6 @@ import { toast } from "@/components/ui/use-toast";
 import { UploadButton } from "@/utils/uploadthing";
 import Image from "next/image";
 import { useState } from "react";
-import "@uploadthing/react/styles.css";
 import MainButton from "@/components/common/MainButton";
 import apiResources from "@/network/resources";
 import { apiClient } from "@/network";
@@ -84,7 +83,7 @@ const Bank = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen max-sm:p-4">
+    <div className="flex flex-col items-center justify-center h-screen max-sm:p-4 mt-10">
       <div className="mb-8 text-lg font-semibold">Bank Details</div>
       <div className="flex flex-col items-center">
         <div className="mb-4">
