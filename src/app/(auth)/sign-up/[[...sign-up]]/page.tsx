@@ -112,7 +112,7 @@ const page = () => {
                 type="text"
                 placeholder="Enter Affiliate ID"
                 value={affiliateId.toUpperCase()}
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
               />
               <input
@@ -122,7 +122,7 @@ const page = () => {
                 type="text"
                 placeholder="Enter your first name"
                 value={firstName}
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none capitalize"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none capitalize"
                 disabled={isSubmitting}
               />
               <input
@@ -132,7 +132,7 @@ const page = () => {
                 type="text"
                 placeholder="Enter your last name"
                 value={lastName}
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none capitalize"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none capitalize"
                 disabled={isSubmitting}
               />
               <input
@@ -142,7 +142,7 @@ const page = () => {
                 type="email"
                 placeholder="Enter your email"
                 value={email}
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
               />
               <input
@@ -152,7 +152,7 @@ const page = () => {
                 type="text"
                 placeholder="Please provide a valid contact number"
                 value={phoneNumber}
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
               />
               <input
@@ -162,7 +162,7 @@ const page = () => {
                 type="text"
                 placeholder="Please provide a valid address"
                 value={address}
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
               />
               <input
@@ -171,7 +171,7 @@ const page = () => {
                 name="password"
                 type="password"
                 placeholder="Password"
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
               />
             </div>

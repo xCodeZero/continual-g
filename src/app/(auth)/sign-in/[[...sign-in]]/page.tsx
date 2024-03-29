@@ -83,7 +83,7 @@ const page = () => {
                 name="email"
                 type="email"
                 placeholder="Email"
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
               />
               <input
@@ -92,7 +92,7 @@ const page = () => {
                 name="password"
                 type="password"
                 placeholder="Password"
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-white outline-none focus:outline-none"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
               />
             </div>
