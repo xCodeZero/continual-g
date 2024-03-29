@@ -1,4 +1,4 @@
-// File: /Users/xcodezero/Desktop/PROJECTS/websites/continualg/src/app/(auth)/sign-up/[[...sign-up]]/page.tsx
+// File: /Users/xcodezero/Desktop/PROJECTS/websites/continual-g/src/app/(auth)/sign-up/[[...sign-up]]/page.tsx
 import * as entry from '../../../../../../src/app/(auth)/sign-up/[[...sign-up]]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

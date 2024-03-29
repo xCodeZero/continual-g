@@ -1,4 +1,4 @@
-// File: /Users/xcodezero/Desktop/PROJECTS/websites/continualg/src/app/api/users/route.ts
+// File: /Users/xcodezero/Desktop/PROJECTS/websites/continual-g/src/app/api/users/route.ts
 import * as entry from '../../../../../src/app/api/users/route.js'
 import type { NextRequest } from 'next/server.js'
 

@@ -32,7 +32,7 @@ export async function POST(request: Request) {
       amount: Number(metadata?.price) || 0,
       status: "SUCCESS" as "SUCCESS",
     };
-    await updateCredits(metadata?.userId as string, Number(metadata?.price));
+    //await updateCredits(metadata?.userId as string, Number(metadata?.price));
     const newTransaction = await createTransaction(transaction);
 
     return NextResponse.json({ message: "OK", transaction: newTransaction });
