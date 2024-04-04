@@ -12,8 +12,8 @@ function NewsLetter() {
   const [email, setEmail] = useState("");
   return (
     <div className="relative w-full">
-      <div className="md:text-[38px] font-semibold text-center mb-6 bg-primary text-white  flex-row flex items-center justify-evenly w-auto max-sm:text-sm">
-        <div className="flex items-center justify-center mr-5">
+      <div className="md:text-[38px] font-semibold text-center mb-6 bg-primary text-white flex flex-col items-center justify-evenly max-sm:text-sm md:flex-row">
+        <div className="flex items-center justify-center mb-3 md:mb-0 md:mr-5">
           <img
             src="/images/continualg/free-shipping.png"
             alt="free shipping"
@@ -26,7 +26,7 @@ function NewsLetter() {
           className="divider"
           style={{ width: "2px", height: "90px", backgroundColor: "white" }}
         ></div>
-        <div className="flex items-center justify-center mr-5">
+        <div className="flex items-center justify-center mb-3 md:mb-0 md:mr-5">
           <img
             src="/images/continualg/return.png"
             alt="easy returns"
@@ -39,7 +39,7 @@ function NewsLetter() {
           className="divider"
           style={{ width: "2px", height: "90px", backgroundColor: "white" }}
         ></div>
-        <div className="flex items-center justify-center mr-5">
+        <div className="flex items-center justify-center mb-3 md:mb-0 md:mr-5">
           <img
             src="/images/continualg/security-shield.png"
             alt="secure"
@@ -52,7 +52,7 @@ function NewsLetter() {
           className="divider"
           style={{ width: "2px", height: "90px", backgroundColor: "white" }}
         ></div>
-        <div className="flex items-center justify-center mr-5">
+        <div className="flex items-center justify-center mb-3 md:mb-0 md:mr-5">
           <img
             src="/images/continualg/quality-control.png"
             alt="quality"
@@ -70,11 +70,11 @@ function NewsLetter() {
         />
       </div>
       <div className="flex justify-center mt-12">
-        <div className="relative w-full md:max-w-[600px]">
-          <p className=" h-[70px] text-white font-semibold text-2xl"></p>
-          <div className="block mt-3 md:mt-0 md:absolute md:top-3 right-3">
+        <div className="relative">
+          <p className="h-[70px] text-white font-semibold text-2xl"></p>
+          <div className="mt-3">
             <Link href="/sign-in">
-              <Button className="w-[580px] bg-primary hover:bg-orange-300">
+              <Button className="w-full max-w-[580px] bg-primary hover:bg-orange-300">
                 Get Started!
               </Button>
             </Link>

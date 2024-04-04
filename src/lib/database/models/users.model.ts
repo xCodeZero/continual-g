@@ -4,11 +4,11 @@ const UserSchema = new Schema(
   {
     affiliateId: {
       type: String,
-      required: true,
+      // required: true,
     },
     accountId: {
       type: String,
-      required: true,
+      // required: true,
       unique: true,
     },
     firstName: {
@@ -29,6 +29,10 @@ const UserSchema = new Schema(
       required: true,
     },
     address: {
+      type: String,
+      required: true,
+    },
+    state: {
       type: String,
       required: true,
     },

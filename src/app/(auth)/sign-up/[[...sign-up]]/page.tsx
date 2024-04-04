@@ -7,6 +7,63 @@ import { apiClient } from "@/network";
 import apiResources from "@/network/resources";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
+import "react-phone-number-input/style.css";
+import PhoneNumberInput from "@/components/input/PhoneNumberInput";
+import { UploadButton } from "@/utils/uploadthing";
+import Modal from "@/components/ui/modal";
+
+const statesOfNigeria: string[] = [
+  "Abia",
+  "Adamawa",
+  "Akwa Ibom",
+  "Anambra",
+  "Bauchi",
+  "Bayelsa",
+  "Benue",
+  "Borno",
+  "Cross River",
+  "Delta",
+  "Ebonyi",
+  "Edo",
+  "Ekiti",
+  "Enugu",
+  "FCT - Abuja",
+  "Gombe",
+  "Imo",
+  "Jigawa",
+  "Kaduna",
+  "Kano",
+  "Katsina",
+  "Kebbi",
+  "Kogi",
+  "Kwara",
+  "Lagos",
+  "Nasarawa",
+  "Niger",
+  "Ogun",
+  "Ondo",
+  "Osun",
+  "Oyo",
+  "Plateau",
+  "Rivers",
+  "Sokoto",
+  "Taraba",
+  "Yobe",
+  "Zamfara",
+];
+
+interface IDType {
+  label: string;
+  value: string;
+}
+
+const idTypes: IDType[] = [
+  { label: "Passport", value: "passport" },
+  { label: "Driver's License", value: "drivers_license" },
+  { label: "National ID", value: "national_id" },
+  { label: "Voter ID", value: "voter_id" },
+  { label: "Other", value: "other" },
+];
 
 const page = () => {
   const router = useRouter();
@@ -19,7 +76,17 @@ const page = () => {
   const [affiliateId, setAffiliateId] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
+  const [state, setState] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedID, setSelectedID] = useState<string>("");
+  const [idImage, setIdImage] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState("");
+  const [isImageClicked, setIsImageClicked] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const handleIDChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedID(e.target.value);
+  };
 
   const handleRegister = async () => {
     setIsSubmitting(true);
@@ -35,7 +102,8 @@ const page = () => {
         lastName &&
         affiliateId &&
         phoneNumber &&
-        address
+        address &&
+        state
       ) {
         setLoading(true);
         const res = await apiClient.post(
@@ -43,13 +111,14 @@ const page = () => {
           "/",
           {
             affiliateId: affiliateId.toUpperCase(),
-            accountId: ("CGNGR" + generatedStrings).toUpperCase(),
+            // accountId: ("CGNGR" + generatedStrings).toUpperCase(),
             firstName,
             lastName,
             email,
             password,
             phoneNumber,
             address,
+            state,
           },
           toast
         );
@@ -81,6 +150,43 @@ const page = () => {
     }
   };
 
+  const handlePhoneNumberChange = (value: string) => {
+    setPhoneNumber(value);
+  };
+
+  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setState(e.target.value);
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
+    setIdImage(file);
+  };
+
+  const onUploadPaymentPhotoSuccessHandler = (result: any) => {
+    setImagePreview((prevState: any) => ({
+      ...prevState,
+      secureURL: result[0].url,
+    }));
+
+    setImagePreview(result[0].url);
+
+    toast({
+      title: "Image uploaded successfully",
+      description: "Your ID is ready to upload.",
+      duration: 5000,
+      className: "success-toast",
+    });
+  };
+
+  const toggleImageClicked = () => {
+    setIsImageClicked(!isImageClicked);
+  };
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className="flex items-center justify-center h-screen w-screen bg-gradient-to-tr from-[#ffffff] to-[#fddbc6] ">
       <div className="flex  items-center justify-center h-screen w-screen">
@@ -89,9 +195,9 @@ const page = () => {
             <Image
               src="/images/continualg/Continual-logo.png"
               alt="register"
-              height={228}
-              width={228}
-              className="object-contain max-sm:w-full mb-14"
+              height={200}
+              width={200}
+              className="object-contain max-sm:w-[150px] mb-14"
             />
           </Link>
 
@@ -101,11 +207,11 @@ const page = () => {
                 Sign Up!
               </h3>
               <p className="mb-2   text-base text-orange-500">
-                Welcome! Please sign up!
+                Welcome! Join our affiliate program.
               </p>
             </div>
             <div className="flex w-full flex-col">
-              <input
+              {/* <input
                 onChange={(e) => setAffiliateId(e.target.value)}
                 id="referrerId"
                 name="referrerId"
@@ -114,7 +220,7 @@ const page = () => {
                 value={affiliateId.toUpperCase()}
                 className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
-              />
+              /> */}
               <input
                 onChange={(e) => setFirstName(e.target.value)}
                 id="firstName"
@@ -145,16 +251,15 @@ const page = () => {
                 className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
               />
-              <input
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                id="phoneNumber"
-                name="phoneNumber"
-                type="text"
-                placeholder="Please provide a valid contact number"
-                value={phoneNumber}
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
-                disabled={isSubmitting}
-              />
+
+              <div className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none">
+                <PhoneNumberInput
+                  value={phoneNumber}
+                  onChange={handlePhoneNumberChange}
+                />
+                <p>Entered phone number: {phoneNumber}</p>
+              </div>
+
               <input
                 onChange={(e) => setAddress(e.target.value)}
                 id="address"
@@ -165,6 +270,66 @@ const page = () => {
                 className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                 disabled={isSubmitting}
               />
+              <select
+                id="state"
+                name="state"
+                value={state}
+                onChange={handleStateChange}
+                className="my-2 w-full border-b border-white bg-transparent py-2 text-black outline-none focus:outline-none"
+                disabled={isSubmitting}
+              >
+                <option value="">Select State</option>
+                {statesOfNigeria.map((stateName) => (
+                  <option key={stateName} value={stateName}>
+                    {stateName}
+                  </option>
+                ))}
+              </select>
+              <select
+                id="idType"
+                name="idType"
+                value={selectedID}
+                onChange={handleIDChange}
+                className="my-2 w-full border-b border-white bg-transparent py-2 text-black outline-none focus:outline-none"
+              >
+                <option value="">Select ID Type</option>
+                {idTypes.map((idType: IDType) => (
+                  <option key={idType.value} value={idType.value}>
+                    {idType.label}
+                  </option>
+                ))}
+              </select>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <label htmlFor="imageUpload" className="">
+                  Upload your ID photo
+                </label>
+                <UploadButton
+                  className="z-1"
+                  endpoint="imageUploader"
+                  onClientUploadComplete={onUploadPaymentPhotoSuccessHandler}
+                  onUploadError={(error: Error) => {
+                    // Do something with the error.
+                    alert(`ERROR! ${error.message}`);
+                  }}
+                />
+                {imagePreview && (
+                  <div onClick={toggleModal} style={{ cursor: "pointer" }}>
+                    <Image src={imagePreview} alt="" width={150} height={150} />
+                  </div>
+                )}
+                <Modal
+                  isOpen={isModalOpen}
+                  onClose={toggleModal}
+                  imageUrl={imagePreview || ""}
+                />
+              </div>
+
               <input
                 onChange={(e) => setPassword(e.target.value)}
                 id="password"

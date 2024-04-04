@@ -39,19 +39,19 @@ function WhyChooseUs() {
     },
   ];
   return (
-    <section>
+    <section className="max-w-screen-md mx-auto">
       <div className="flex flex-col gap-8 md:flex-row justify-around">
-        <div>
-          <img src="/images/choose_us.png" alt="choose us" />
+        <div className="w-full md:w-auto max-sm:w-96">
+          <img src="/images/choose_us.png" alt="choose us" className="w-full" />
         </div>
-        <div>
+        <div className="w-full md:w-auto max-sm:w-96">
           <Header
             title="THE KEY TO CONTINUAL GOOD HEALTH"
             description="Rapidly Increase Your Cellular Gluthathione In A Single Dose!"
           />
           <p>Think faster, Fight Stronger, Recover Earlier With CONTINUAL-G®</p>
 
-          <div className="relative mt-5 w-[700px]">
+          <div className="relative mt-5">
             {chooseUsData.map((item, index) => (
               <div key={index} className="flex items-center">
                 <div className="mb-6 mr-3">
@@ -64,7 +64,7 @@ function WhyChooseUs() {
               </div>
             ))}
             <MainButton text="EXPLORE MORE" classes="w-[150px] mt-12" />
-            <div className="hidden md:block absolute right-0">
+            <div className="hidden md:block absolute right-0 top-0">
               <img src="/images/plane.png" alt="plane" />
             </div>
           </div>
@@ -72,10 +72,14 @@ function WhyChooseUs() {
       </div>
 
       <div className="flex flex-col gap-8 md:flex-row-reverse justify-around mt-10">
-        <div>
-          <img src="/images/choose_us_2.png" alt="choose us" />
+        <div className="w-full md:w-auto">
+          <img
+            src="/images/choose_us_2.png"
+            alt="choose us"
+            className="w-full"
+          />
         </div>
-        <div>
+        <div className="w-full md:w-auto">
           <Header title="NOURISH YOUR SKIN" description="FROM WITHIN" />
 
           <p className="my-8">
@@ -89,7 +93,7 @@ function WhyChooseUs() {
             description=""
           />
 
-          <p className="my-8 w-[700px]">
+          <p className="my-8">
             Your skin is the largest organ in your body, composed of trillions
             of cells! Every day, your skin must defend itself from a barrage of
             external and internal threats - from humidity to UV radiation to
@@ -99,15 +103,6 @@ function WhyChooseUs() {
           </p>
 
           <MainButton text="EXPLORE MORE" classes="w-[150px]" />
-
-          {/* <div className="flex flex-col gap-8 md:gap-16 md:flex-row ">
-            {ourStats.map((item, index) => (
-              <div key={index} className="">
-                <p className="text-[58px] font-bold">{item.value}</p>
-                <p className="text-secondary">{item.item}</p>
-              </div>
-            ))}
-          </div> */}
         </div>
       </div>
     </section>

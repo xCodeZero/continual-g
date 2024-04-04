@@ -7,6 +7,9 @@ declare type CreateUserParams = {
   password: string;
   phoneNumber: string;
   address: string;
+  state: string;
+  idType: string;
+  idImage: string;
   bankAccount: string;
   bank: string;
 };
@@ -21,6 +24,9 @@ declare type UpdateUserParams = {
   userRole: number;
   phoneNumber: string;
   address: string;
+  state: string;
+  idType: string;
+  idImage: string;
   bio: string;
   photo: string;
   coverPhoto: string;

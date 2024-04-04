@@ -10,8 +10,8 @@ import Link from "next/link";
 
 function HeroSection() {
   return (
-    <section className="flex flex-col gap-8 md:flex-row justify-between items-center max-sm:mt-10">
-      <div>
+    <section className="flex flex-col gap-8 md:flex-row justify-between items-center max-sm:flex-col-reverse max-sm:mt-10">
+      <div className="max-sm:w-full">
         <div className="relative text-3xl md:text-[70px] lg:text-[80px] font-bold md:leading-[6rem] select-none">
           CONTINUAL-G® EXPERIENCE MUSCLE RECOVERY
           <p className="font-normal">AFTER INTENSE WORKOUTS</p>
@@ -25,7 +25,6 @@ function HeroSection() {
           As a fitness enthusiast, everyday workout is an inevitable part of who
           you are. But is your body recovering from these vigorous workouts?
         </p>
-
         <p className="text-black mt-4 opacity-[75] mb-8 md:my-8 lg:w-[900px]">
           Intense training can drain you out faster, making your breathing more
           rapid as the oxidative stress increases in your body. Hence there is a
@@ -36,14 +35,14 @@ function HeroSection() {
         </p>
         <div>
           <Link href="/sign-in">
-            <button className="w-[300px] rounded-md border-black bg-primary p-4 text-center  text-white">
+            <button className="w-full md:w-[300px] rounded-md border-black bg-primary p-4 text-center text-white">
               Get Started
             </button>
           </Link>
         </div>
       </div>
-      <div>
-        <img src="/images/hero.png" alt="hero image" />
+      <div className="max-sm:w-full">
+        <img src="/images/hero.png" alt="hero image" className="w-full" />
       </div>
       <Toaster />
     </section>

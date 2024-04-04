@@ -7,7 +7,7 @@ function Header({ title, description }: IProps) {
   return (
     <div>
       <p className="text-primary font-semibold text-[28px] mb-3 ">{title}</p>
-      <p className="text-black text-3xl md:text-[58px] font-bold md:leading-[4.5rem] w-[700px] max-sm:w-[500px]">
+      <p className="text-black text-3xl md:text-[58px] font-bold md:leading-[4.5rem] w-[700px] max-sm:w-96">
         {description}
       </p>
     </div>
