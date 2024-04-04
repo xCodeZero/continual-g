@@ -74,14 +74,17 @@ function NavBar() {
             {/* Add more links here */}
           </div>
           <div className="flex items-center gap-[40px] select-none w-[24x] h-[24px] cursor-pointer">
-            <Dialog>
+            <Link href="/sign-up">
+              <img src="/images/hamburger.png" alt="hamburger" />
+            </Link>
+            {/* <Dialog>
               <DialogTrigger asChild>
                 <img src="/images/hamburger.png" alt="hamburger" />
               </DialogTrigger>
               <DialogContent className="sm:max-w-[425px]">
                 <AuthWrapperForm />
               </DialogContent>
-            </Dialog>
+            </Dialog> */}
           </div>
         </div>
       </div>

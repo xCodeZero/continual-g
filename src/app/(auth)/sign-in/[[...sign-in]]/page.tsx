@@ -111,9 +111,9 @@ const page = () => {
               <Link href="/sign-up">
                 <div className="flex w-full items-center justify-center">
                   <p className="text-sm font-normal text-orange-600">
-                    You don&apos;t have account yet?{" "}
+                    Not an affiliate yet?{" "}
                     <span className="cursor-pointer font-semibold underline underline-offset-2">
-                      Sign Up!
+                      Apply Now!
                     </span>
                   </p>
                 </div>

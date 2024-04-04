@@ -141,14 +141,14 @@ export async function createOrder(orderData: OrderData) {
         accountId: user.accountId,
         source: user.firstName + " " + user.lastName,
         source_id: user.accountId,
-        amount: 30000,
+        amount: 100000,
         status: "SUCCESS" as "SUCCESS",
       };
 
       await createEarnings(earnings);
 
       //NOTE: Add amount to  Affiliate's credit
-      const addCreditToAffiliate = Number(affiliate.creditCoins) + 30000;
+      const addCreditToAffiliate = Number(affiliate.creditCoins) + 100000;
       await updateUser(affiliate._id, {
         creditCoins: addCreditToAffiliate,
       });

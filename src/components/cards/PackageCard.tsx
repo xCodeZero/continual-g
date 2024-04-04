@@ -120,6 +120,21 @@ function PackageCard({
             ₦{numberWithCommas(per_person_price_in_credit)}
           </span>
         </div>
+        <section className="flex gap-8 flex-col md:flex-row">
+          <div className="flex gap-2 items-center text-gray-500">
+            <img
+              src="/images/boxes.png"
+              height={15}
+              width={15}
+              alt="many users"
+            />
+            <span className="">{total_people_allowed} Boxes</span>
+          </div>
+          <div className="flex gap-2 items-center text-gray-500">
+            <Icon icon="mdi:location" className="text-[24px]" />
+            <span className="">{location}</span>
+          </div>
+        </section>
         <div className="my-4">
           <MainButton
             text="Order Now"
@@ -130,12 +145,12 @@ function PackageCard({
           />
         </div>
 
-        <section className="flex gap-8 flex-col md:flex-row">
+        {/* <section className="flex gap-8 flex-col md:flex-row">
           <div className="flex gap-2 items-center text-gray-500">
             <Icon icon="mdi:location" className="text-[24px]" />
             <span className="">{location}</span>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );
