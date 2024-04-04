@@ -47,6 +47,9 @@ const TopUp = () => {
           phoneNumber: string;
           photo: string;
           coverPhoto: string;
+          state: string;
+          idType: string;
+          idImage: string;
         }>(apiResources.users, "/");
         // Set to global state
         setUser(res);

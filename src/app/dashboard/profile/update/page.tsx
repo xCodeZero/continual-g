@@ -56,6 +56,9 @@ function Profile() {
           bio: string;
           coverPhoto: string;
           photo: string;
+          state: string;
+          idType: string;
+          idImage: string;
         }>(apiResources.users, "/");
         // Set to global state
         setUser(res);
