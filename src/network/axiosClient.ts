@@ -163,7 +163,7 @@ class ApiClient {
     ) {
       setTimeout(() => {
         if (typeof window !== "undefined") {
-          window.location.href = "/";
+          window.location.href = "/sign-in";
         }
       }, 500);
     }

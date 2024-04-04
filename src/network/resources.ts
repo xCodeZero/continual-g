@@ -13,6 +13,7 @@ const apiResources = {
   profile: "/profile",
   updateprofile: "/updateprofile",
   topup: "/topup",
+  mail: "/mail",
 };
 
 export default apiResources;

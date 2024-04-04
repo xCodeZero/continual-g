@@ -36,7 +36,7 @@ function HeroSection() {
         <div>
           <Link href="/sign-in">
             <button className="w-full md:w-[300px] rounded-md border-black bg-primary p-4 text-center text-white">
-              Get Started
+              Become an affiliate!
             </button>
           </Link>
         </div>

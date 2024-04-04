@@ -6,7 +6,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const { email, password } = body;
+    const { accountId, password } = body;
 
     const inputValidation = LoginUserInputValidation.safeParse(body);
 
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const user = await loginUser(email, password);
+    const user = await loginUser(accountId, password);
 
     return success_response(user, "User login successfully", 200);
   } catch (err) {

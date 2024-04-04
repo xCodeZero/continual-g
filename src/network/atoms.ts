@@ -21,6 +21,8 @@ export const ATOMS = {
     photo: "",
     phoneNumber: "",
     address: "",
+    idType: "",
+    idImage: "",
   }),
   sidebarMinimized: atom(sidebarMinimizedDefault),
 };

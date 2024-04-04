@@ -66,7 +66,7 @@ function NavBar() {
             >
               <Link href="/sign-up">
                 <Button className="bg-transparent text-black hover:bg-orange-300">
-                  Sign UP!
+                  Become an affiliate!
                 </Button>
               </Link>
             </p>
@@ -128,16 +128,16 @@ function NavBar() {
               >
                 <Link href="/packages">Packages</Link>
               </p>
-              <p
+              {/* <p
                 className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
               >
                 <Link href="/contact">Contact</Link>
-              </p>
+              </p> */}
               <Link href="/sign-up">
                 <p
                   className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
                 >
-                  <Link href="/sign-up">Sign Up!</Link>
+                  <Link href="/sign-up">Become an affiliate!</Link>
                 </p>
               </Link>
             </div>

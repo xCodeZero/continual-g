@@ -11,6 +11,8 @@ import "react-phone-number-input/style.css";
 import PhoneNumberInput from "@/components/input/PhoneNumberInput";
 import { UploadButton } from "@/utils/uploadthing";
 import Modal from "@/components/ui/modal";
+import { Button } from "@/components/ui/button";
+import { compileWelcomeTemplate, sendMail } from "@/lib/mail";
 
 const statesOfNigeria: string[] = [
   "Abia",
@@ -100,18 +102,20 @@ const page = () => {
         password &&
         firstName &&
         lastName &&
-        affiliateId &&
+        // affiliateId &&
         phoneNumber &&
         address &&
-        state
+        state &&
+        idImage &&
+        selectedID
       ) {
         setLoading(true);
         const res = await apiClient.post(
           apiResources.register,
           "/",
           {
-            affiliateId: affiliateId.toUpperCase(),
-            // accountId: ("CGNGR" + generatedStrings).toUpperCase(),
+            affiliateId: "",
+            accountId: "",
             firstName,
             lastName,
             email,
@@ -119,6 +123,8 @@ const page = () => {
             phoneNumber,
             address,
             state,
+            idImage,
+            idType: selectedID,
           },
           toast
         );
@@ -126,6 +132,7 @@ const page = () => {
         console.log(res);
 
         if (res?.response?.meta?.message) {
+          sendEmail();
           toast({
             title: "User creation",
             description: res?.response?.meta?.message,
@@ -171,6 +178,8 @@ const page = () => {
 
     setImagePreview(result[0].url);
 
+    setIdImage(result[0].url);
+
     toast({
       title: "Image uploaded successfully",
       description: "Your ID is ready to upload.",
@@ -179,12 +188,31 @@ const page = () => {
     });
   };
 
-  const toggleImageClicked = () => {
-    setIsImageClicked(!isImageClicked);
-  };
-
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const sendEmail = async () => {
+    setLoading(true);
+    try {
+      await apiClient.post(
+        apiResources.mail,
+        "/",
+        {
+          to: email,
+          name: firstName,
+          subject: "Affiliate Application",
+        },
+        toast
+      );
+
+      alert("Email sent successfully!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Failed to send email. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -352,6 +380,7 @@ const page = () => {
                   <>Sign Up</>
                 )}
               </button>
+
               <Link href="/sign-in">
                 <div className="flex w-full items-center justify-center">
                   <p className="text-sm font-normal text-orange-600">

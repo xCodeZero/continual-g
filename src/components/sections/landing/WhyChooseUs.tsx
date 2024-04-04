@@ -39,7 +39,7 @@ function WhyChooseUs() {
     },
   ];
   return (
-    <section className="max-w-screen-md mx-auto">
+    <section className="mx-auto w-full">
       <div className="flex flex-col gap-8 md:flex-row justify-around">
         <div className="w-full md:w-auto max-sm:w-96">
           <img src="/images/choose_us.png" alt="choose us" className="w-full" />

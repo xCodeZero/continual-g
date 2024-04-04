@@ -1,14 +1,14 @@
 import * as z from "zod";
 
 const CreateUserInputValidation = z.object({
-  affiliateId: z
-    .string()
-    .min(3, {
-      message: "Affiliate ID must be at least 3 characters.",
-    })
-    .max(50, {
-      message: "Affiliate ID must be at most 50 characters.",
-    }),
+  // affiliateId: z
+  //   .string()
+  //   .min(3, {
+  //     message: "Affiliate ID must be at least 3 characters.",
+  //   })
+  //   .max(50, {
+  //     message: "Affiliate ID must be at most 50 characters.",
+  //   }),
   firstName: z
     .string()
     .min(3, {
@@ -60,14 +60,9 @@ const CreateUserInputValidation = z.object({
 });
 
 const LoginUserInputValidation = z.object({
-  email: z
-    .string()
-    .email({
-      message: "Enter a valid email",
-    })
-    .min(2, {
-      message: "email must be at least 2 characters.",
-    }),
+  accountId: z.string().min(2, {
+    message: "Account ID must be at least 10 characters.",
+  }),
   password: z
     .string()
     .min(8, {

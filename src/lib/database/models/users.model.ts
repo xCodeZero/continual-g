@@ -9,7 +9,7 @@ const UserSchema = new Schema(
     accountId: {
       type: String,
       // required: true,
-      unique: true,
+      //unique: true,
     },
     firstName: {
       type: String,
@@ -33,6 +33,14 @@ const UserSchema = new Schema(
       required: true,
     },
     state: {
+      type: String,
+      required: true,
+    },
+    idType: {
+      type: String,
+      required: true,
+    },
+    idImage: {
       type: String,
       required: true,
     },

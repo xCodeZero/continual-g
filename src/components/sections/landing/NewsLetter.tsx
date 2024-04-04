@@ -75,7 +75,7 @@ function NewsLetter() {
           <div className="mt-3">
             <Link href="/sign-in">
               <Button className="w-full max-w-[580px] bg-primary hover:bg-orange-300">
-                Get Started!
+                Become an affiliate!
               </Button>
             </Link>
           </div>

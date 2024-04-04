@@ -13,19 +13,19 @@ const page = () => {
   const { toast } = useToast();
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [email, setEmail] = useState("");
+  const [accountId, setAccountId] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      if (email && password) {
+      if (accountId && password) {
         setIsSubmitting(true);
 
         const loginRes = await apiClient.post(
           apiResources.login,
           "/",
           {
-            email,
+            accountId,
             password,
           },
           toast
@@ -78,12 +78,12 @@ const page = () => {
             </div>
             <div className="flex w-full flex-col">
               <input
-                onChange={(e) => setEmail(e.target.value)}
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Email"
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
+                onChange={(e) => setAccountId(e.target.value)}
+                id="accountId"
+                name="accountId"
+                type="text"
+                placeholder="Account ID"
+                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none uppercase"
                 disabled={isSubmitting}
               />
               <input
