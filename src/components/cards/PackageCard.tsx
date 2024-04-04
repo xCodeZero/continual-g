@@ -46,6 +46,9 @@ function PackageCard({
       coverPhoto: string;
       address: string;
       phoneNumber: string;
+      state: string;
+      idType: string;
+      idImage: string;
     }>(apiResources.users, "/");
     // Set to global state
     setUser(res);
