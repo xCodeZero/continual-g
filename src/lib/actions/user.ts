@@ -22,7 +22,7 @@ export async function createUser(user: CreateUserParams) {
 
     const existingUser = await User.findOne({ email: user.email });
 
-    const existingUserId = await User.findOne({ accountId: user.accountId });
+    // const existingUserId = await User.findOne({ accountId: user.accountId });
 
     // if (!checkAffiliateUser) {
     //   handleError(`Your affiliate user ID: ${user.affiliateId} do not exist.`);
@@ -31,9 +31,9 @@ export async function createUser(user: CreateUserParams) {
     if (existingUser) {
       handleError("User with this email already exists");
     }
-    if (existingUserId) {
-      handleError(`User with this User ID: ${user.accountId}  already exists`);
-    }
+    // if (existingUserId) {
+    //   handleError(`User with this User ID: ${user.accountId}  already exists`);
+    // }
 
     user["password"] = await hash(user.password, 10);
 
