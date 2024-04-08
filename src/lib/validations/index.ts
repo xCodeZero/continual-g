@@ -54,7 +54,7 @@ const CreateUserInputValidation = z.object({
     .min(3, {
       message: "Please provide a address.",
     })
-    .max(50, {
+    .max(200, {
       message: "Please provide a valide address.",
     }),
 });
