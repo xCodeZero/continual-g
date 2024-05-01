@@ -206,7 +206,12 @@ const page = () => {
         toast
       );
 
-      alert("Email sent successfully!");
+      toast({
+        title: "Email Sent!",
+        description: "We sent you an email, please check your email",
+        duration: 5000,
+        className: "success-toast",
+      });
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Failed to send email. Please try again later.");
