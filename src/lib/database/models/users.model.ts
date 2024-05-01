@@ -38,11 +38,11 @@ const UserSchema = new Schema(
     },
     idType: {
       type: String,
-      required: true,
+      // required: true,
     },
     idImage: {
       type: String,
-      required: true,
+      // required: true,
     },
     creditCoins: {
       type: Number,

@@ -105,9 +105,9 @@ const page = () => {
         // affiliateId &&
         phoneNumber &&
         address &&
-        state &&
-        idImage &&
-        selectedID
+        state
+        // idImage &&
+        // selectedID
       ) {
         setLoading(true);
         const res = await apiClient.post(
@@ -313,7 +313,7 @@ const page = () => {
                   </option>
                 ))}
               </select>
-              <select
+              {/* <select
                 id="idType"
                 name="idType"
                 value={selectedID}
@@ -356,7 +356,7 @@ const page = () => {
                   onClose={toggleModal}
                   imageUrl={imagePreview || ""}
                 />
-              </div>
+              </div> */}
 
               <input
                 onChange={(e) => setPassword(e.target.value)}
