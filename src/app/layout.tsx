@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import "react-modern-drawer/dist/index.css";
 import JotaiProviders from "@/providers/jotai";
 import NavBar from "@/components/common/NavBar";
+import Footer from "@/components/sections/landing/Footer";
 
 export const metadata: Metadata = {
   title: "Continual-G®",
@@ -27,8 +28,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <JotaiProviders>
         <body className={inter.className}>
-          {/* <NavBar /> */}
+          <NavBar />
           {children}
+
+          <Footer />
         </body>
       </JotaiProviders>
 

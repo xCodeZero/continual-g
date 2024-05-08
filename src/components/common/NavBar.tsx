@@ -52,15 +52,15 @@ function NavBar() {
                 </Button>
               </Link>
             </p>
-            {/* <p
+            <p
               className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
             >
-              <Link href="/contact">
+              <Link href="/affiliate-program">
                 <Button className="bg-transparent text-black hover:bg-orange-300">
-                  Contact
+                  Affiliate Program
                 </Button>
               </Link>
-            </p> */}
+            </p>
             <p
               className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
             >
@@ -131,11 +131,11 @@ function NavBar() {
               >
                 <Link href="/packages">Packages</Link>
               </p>
-              {/* <p
+              <p
                 className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
               >
-                <Link href="/contact">Contact</Link>
-              </p> */}
+                <Link href="/affiliate-program"> Affiliate Program</Link>
+              </p>
               <Link href="/sign-up">
                 <p
                   className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}

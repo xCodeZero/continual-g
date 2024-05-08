@@ -1,4 +1,6 @@
 {
-  "/(auth)/sign-in/[[...sign-in]]/page": "app/(auth)/sign-in/[[...sign-in]]/page.js",
-  "/(auth)/sign-up/[[...sign-up]]/page": "app/(auth)/sign-up/[[...sign-up]]/page.js"
+  "/(auth)/sign-up/[[...sign-up]]/page": "app/(auth)/sign-up/[[...sign-up]]/page.js",
+  "/(root)/affiliate-program/page": "app/(root)/affiliate-program/page.js",
+  "/(root)/my-affiliate/page": "app/(root)/my-affiliate/page.js",
+  "/(root)/(home)/page": "app/(root)/(home)/page.js"
 }
