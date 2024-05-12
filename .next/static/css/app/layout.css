@@ -1186,6 +1186,18 @@ video {
 .mb-\[300px\] {
   margin-bottom: 300px;
 }
+.mt-\[1000px\] {
+  margin-top: 1000px;
+}
+.mt-\[650px\] {
+  margin-top: 650px;
+}
+.mt-\[750px\] {
+  margin-top: 750px;
+}
+.mt-\[350px\] {
+  margin-top: 350px;
+}
 .block {
   display: block;
 }

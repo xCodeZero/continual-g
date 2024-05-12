@@ -29,7 +29,7 @@ const MyAffiliatePage = () => {
         animate={{ y: "0%" }}
         transition={{ duration: 1 }}
       >
-        <div className="flex justify-center items-center h-screen flex-col max-sm:mt-[500px] mt-[250px] mb-20">
+        <div className="flex justify-center items-center h-screen flex-col max-sm:mt-[500px] mt-[350px] mb-20">
           <div className="mt-2 relative">
             <img
               src="/images/continualg/affiliate.jpeg"
