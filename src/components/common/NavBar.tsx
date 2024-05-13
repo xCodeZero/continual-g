@@ -43,7 +43,7 @@ function NavBar() {
                 </Button>
               </Link>
             </p>
-            <p
+            {/* <p
               className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
             >
               <Link href="/packages">
@@ -51,7 +51,7 @@ function NavBar() {
                   Packages
                 </Button>
               </Link>
-            </p>
+            </p> */}
             <p
               className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
             >
@@ -126,11 +126,11 @@ function NavBar() {
               >
                 <Link href="/">Home</Link>
               </p>
-              <p
+              {/* <p
                 className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
               >
                 <Link href="/packages">Packages</Link>
-              </p>
+              </p> */}
               <p
                 className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
               >
