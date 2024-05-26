@@ -15,7 +15,7 @@ const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({
 }) => {
   return (
     <PhoneInput
-      placeholder="Enter phone number"
+      placeholder="Contact number"
       value={value}
       onChange={onChange}
       countryselectcomponent={CountrySelectDropdown}

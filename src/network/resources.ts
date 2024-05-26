@@ -14,6 +14,8 @@ const apiResources = {
   updateprofile: "/updateprofile",
   topup: "/topup",
   mail: "/mail",
+  meetingmail: "/meetingmail",
+  registermeeting: "/registermeeting",
 };
 
 export default apiResources;

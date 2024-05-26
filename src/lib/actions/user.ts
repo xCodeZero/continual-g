@@ -45,6 +45,38 @@ export async function createUser(user: CreateUserParams) {
   }
 }
 
+export async function reserverMeetingSlot(user: CreateUserParams) {
+  try {
+    await connectToDatabase();
+    // const checkAffiliateUser = await User.findOne({
+    //   accountId: user.affiliateId,
+    // });
+
+    const existingUser = await User.findOne({ email: user.email });
+
+    // const existingUserId = await User.findOne({ accountId: user.accountId });
+
+    // if (!checkAffiliateUser) {
+    //   handleError(`Your affiliate user ID: ${user.affiliateId} do not exist.`);
+    // }
+
+    if (existingUser) {
+      handleError("User with this email already exists");
+    }
+    // if (existingUserId) {
+    //   handleError(`User with this User ID: ${user.accountId}  already exists`);
+    // }
+
+    user["password"] = await hash(user.password, 10);
+
+    const newUser = await User.create(user);
+
+    return newUser;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
 export async function sendMail({
   to,
   name,

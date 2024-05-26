@@ -6,36 +6,15 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/(auth)/sign-in/[[...sign-in]]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(auth)/sign-in/[[...sign-in]]/page.js"
-    ],
-    "/(auth)/sign-up/[[...sign-up]]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(auth)/sign-up/[[...sign-up]]/page.css",
-      "static/chunks/app/(auth)/sign-up/[[...sign-up]]/page.js"
-    ],
     "/(root)/(home)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(root)/(home)/page.js"
     ],
-    "/(root)/packages/page": [
+    "/(root)/meeting-registration/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(root)/packages/page.js"
-    ],
-    "/(root)/affiliate-program/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(root)/affiliate-program/page.js"
-    ],
-    "/(root)/my-affiliate/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(root)/my-affiliate/page.js"
+      "static/chunks/app/(root)/meeting-registration/page.js"
     ]
   }
 }

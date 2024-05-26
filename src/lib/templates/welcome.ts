@@ -360,7 +360,7 @@ export const welcomeTemplate = `
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      <span style="color: #ffffff"
+                                      <span style="color: #000000"
                                         ><span
                                           ><strong
                                             >YOUR APPLICATION IS NOW UNDER
@@ -409,7 +409,7 @@ export const welcomeTemplate = `
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      <span style="color: #ffffff"
+                                      <span style="color: #000000"
                                         ><span
                                           ><span
                                             >you will receive an email from us

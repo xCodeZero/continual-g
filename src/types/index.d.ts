@@ -14,6 +14,20 @@ declare type CreateUserParams = {
   bank: string;
 };
 
+declare type ReserveSlotParams = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  state: string;
+  profession: string;
+  specialization: string;
+  organization: string;
+  reason: string[];
+  question: string;
+  agree: boolean;
+};
+
 declare type UpdateUserParams = {
   firstName: string;
   lastName: string;

@@ -44,7 +44,7 @@ const page = () => {
 
           setTimeout(() => {
             setIsSubmitting(false);
-            router.push("/dashboard");
+            router.push("/dashboard/applicants");
           }, 1000);
         }
       }
@@ -54,7 +54,7 @@ const page = () => {
   };
 
   return (
-    <div className="flex ih-full w-full flex-col items-center bg-gradient-to-tr from-[#ffffff] to-[#fddbc6]">
+    <div className="flex h-full w-full flex-col items-center bg-gradient-to-tr from-[#ffffff] to-[#fddbc6] rounded-lg">
       <div className="flex  items-center justify-center h-screen w-screen">
         <div className="flex h-full w-full  flex-col items-center   p-20 max-sm:w-full">
           <Link href="/">

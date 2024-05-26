@@ -34,9 +34,9 @@ function HeroSection() {
           supplement with Glyteine.
         </p>
         <div>
-          <Link href="/sign-in">
+          <Link href="/meeting-registration">
             <button className="w-full md:w-[300px] rounded-md border-black bg-primary p-4 text-center text-white">
-              Become an affiliate!
+              Register now for CONTINUAL-G® Virtual Meeting!
             </button>
           </Link>
         </div>

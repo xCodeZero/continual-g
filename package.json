@@ -24,7 +24,7 @@
     "@types/jsonwebtoken": "^9.0.6",
     "@types/nodemailer": "^6.4.14",
     "@uidotdev/usehooks": "^2.4.1",
-    "@uploadthing/react": "^6.4.0",
+    "@uploadthing/react": "^6.5.4",
     "apexcharts": "^3.47.0",
     "axios": "^1.6.7",
     "bcrypt": "^5.1.1",
@@ -52,7 +52,7 @@
     "stripe": "^14.20.0",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
-    "uploadthing": "^6.6.0",
+    "uploadthing": "^6.10.4",
     "zod": "^3.22.4"
   },
   "devDependencies": {
