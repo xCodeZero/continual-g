@@ -19,19 +19,11 @@ const MeetingSchema = new Schema(
       type: String,
       required: true,
     },
-
     profession: {
       type: String,
       required: true,
     },
     state: {
-      type: String,
-      required: true,
-    },
-    specialization: {
-      type: String,
-    },
-    organization: {
       type: String,
       required: true,
     },

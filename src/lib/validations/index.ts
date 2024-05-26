@@ -108,14 +108,6 @@ const CreateMeetingInputValidation = z.object({
     .max(200, {
       message: "Please provide a valid state.",
     }),
-  organization: z
-    .string()
-    .min(3, {
-      message: "Please provide your organization.",
-    })
-    .max(200, {
-      message: "Please provide a valid organization.",
-    }),
   reason: z
     .array(
       z

@@ -77,7 +77,7 @@ const MeetingRegistration = () => {
   const [consent, setConsent] = useState(false);
   const [specialization, setSpecialization] = useState("");
   const [organization, setOrganization] = useState("");
-  const [profession, setProfession] = useState("");
+  const [otherProfession, setOtherProfession] = useState("");
 
   const handlePhoneNumberChange = (value: string) => {
     setPhoneNumber(value);
@@ -142,7 +142,6 @@ const MeetingRegistration = () => {
         phoneNumber &&
         state &&
         roleState &&
-        organization &&
         selectedReasons &&
         consent
       ) {
@@ -156,8 +155,7 @@ const MeetingRegistration = () => {
             email,
             phoneNumber,
             state,
-            profession: profession !== null || "" ? profession : roleState,
-            organization,
+            profession: otherProfession !== "" ? otherProfession : roleState,
             reason: selectedReasons,
             question: questionsOrTopics,
             agree: consent,
@@ -183,7 +181,7 @@ const MeetingRegistration = () => {
         setIsSubmitting(false);
         toast({
           title: "User creation error",
-          description: "Plase fill up the form.",
+          description: "Please fill up the form.",
           className: "error-toast",
         });
       }
@@ -194,9 +192,9 @@ const MeetingRegistration = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-[1900px] w-screen bg-gradient-to-tr from-[#ffffff] to-[#fddbc6] ">
+    <div className="flex items-center justify-center  w-screen">
       <div className="flex  items-center justify-center h-screen w-screen">
-        <div className="flex h-full w-full  flex-col items-center   p-20 max-sm:w-full">
+        <div className="flex h-full w-full  flex-col items-center p-20 max-sm:w-full">
           <Link href="/">
             <Image
               src="/images/continualg/Continual-logo.png"
@@ -280,12 +278,12 @@ const MeetingRegistration = () => {
                 </select>
               ) : (
                 <input
-                  onChange={(e) => setProfession(e.target.value)}
+                  onChange={(e) => setOtherProfession(e.target.value)}
                   id="professionalRole"
                   name="professionalRole"
                   type="text"
                   placeholder="Other Profession"
-                  value={profession}
+                  value={otherProfession}
                   className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                   disabled={isSubmitting}
                 />
@@ -307,26 +305,6 @@ const MeetingRegistration = () => {
                 ))}
               </select>
 
-              <input
-                onChange={(e) => setSpecialization(e.target.value)}
-                id="specialization"
-                name="specialization"
-                type="text"
-                placeholder="Specialization"
-                value={specialization}
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
-                disabled={isSubmitting}
-              />
-              <input
-                onChange={(e) => setOrganization(e.target.value)}
-                id="organization"
-                name="organization"
-                type="text"
-                placeholder="Organization/Institution Name"
-                value={organization}
-                className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
-                disabled={isSubmitting}
-              />
               <div className="my-4">
                 <h4 className="mb-2 text-lg font-semibold text-orange-600">
                   Reason for Attending*

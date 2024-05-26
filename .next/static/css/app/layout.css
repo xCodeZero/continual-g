@@ -846,6 +846,9 @@ video {
 .visible {
   visibility: visible;
 }
+.static {
+  position: static;
+}
 .fixed {
   position: fixed;
 }
@@ -1009,6 +1012,10 @@ video {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.mx-\[11px\] {
+  margin-left: 11px;
+  margin-right: 11px;
+}
 .-mt-\[3\.3225rem\] {
   margin-top: -3.3225rem;
 }
@@ -1128,6 +1135,12 @@ video {
 }
 .mt-\[200px\] {
   margin-top: 200px;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-\[300px\] {
+  margin-top: 300px;
 }
 .block {
   display: block;

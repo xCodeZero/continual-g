@@ -221,7 +221,7 @@ const page = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen w-screen bg-gradient-to-tr from-[#ffffff] to-[#fddbc6] ">
+    <div className="flex items-center justify-center h-screen w-screen">
       <div className="flex  items-center justify-center h-screen w-screen">
         <div className="flex h-full w-full  flex-col items-center   p-20 max-sm:w-full">
           <Link href="/">

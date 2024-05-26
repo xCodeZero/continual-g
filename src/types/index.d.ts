@@ -21,8 +21,6 @@ declare type ReserveSlotParams = {
   phoneNumber: string;
   state: string;
   profession: string;
-  specialization: string;
-  organization: string;
   reason: string[];
   question: string;
   agree: boolean;
