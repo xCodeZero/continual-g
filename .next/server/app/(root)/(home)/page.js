@@ -78,7 +78,7 @@ module.exports = require("next/dist\\client\\components\\request-async-storage.e
 
 /***/ }),
 
-/***/ "../../../client/components/static-generation-async-storage.external":
+/***/ "../../client/components/static-generation-async-storage.external":
 /*!*********************************************************************************************!*\
   !*** external "next/dist\\client\\components\\static-generation-async-storage.external.js" ***!
   \*********************************************************************************************/

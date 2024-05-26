@@ -67,19 +67,17 @@ const MeetingRegistration = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-
   const [phoneNumber, setPhoneNumber] = useState("");
-
   const [state, setState] = useState("");
   const [roleState, setRoleState] = useState("");
   const [otherReason, setOtherReason] = useState("");
   const [selectedReasons, setSelectedReasons] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const [questionsOrTopics, setQuestionsOrTopics] = useState("");
   const [consent, setConsent] = useState(false);
   const [specialization, setSpecialization] = useState("");
   const [organization, setOrganization] = useState("");
+  const [profession, setProfession] = useState("");
 
   const handlePhoneNumberChange = (value: string) => {
     setPhoneNumber(value);
@@ -158,7 +156,7 @@ const MeetingRegistration = () => {
             email,
             phoneNumber,
             state,
-            profession: roleState,
+            profession: profession !== null || "" ? profession : roleState,
             organization,
             reason: selectedReasons,
             question: questionsOrTopics,
@@ -282,12 +280,12 @@ const MeetingRegistration = () => {
                 </select>
               ) : (
                 <input
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setProfession(e.target.value)}
                   id="professionalRole"
                   name="professionalRole"
                   type="text"
                   placeholder="Other Profession"
-                  value={roleState}
+                  value={profession}
                   className="my-2 w-full border-b border-white  bg-transparent py-2  text-black outline-none focus:outline-none"
                   disabled={isSubmitting}
                 />
