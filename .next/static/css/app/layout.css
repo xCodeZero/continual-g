@@ -2946,6 +2946,22 @@ video {
     margin-top: 400px;
   }
 
+  .max-sm\:mt-\[700px\] {
+    margin-top: 700px;
+  }
+
+  .max-sm\:mt-\[900px\] {
+    margin-top: 900px;
+  }
+
+  .max-sm\:mt-\[1200px\] {
+    margin-top: 1200px;
+  }
+
+  .max-sm\:mt-\[1100px\] {
+    margin-top: 1100px;
+  }
+
   .max-sm\:w-96 {
     width: 24rem;
   }
