@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="text-white bg-primary py-16 px-4 max-sm:mt-[200px] mt-[100px]">
+    <div className="text-white bg-primary py-16 px-4 max-sm:mt-[200px] mt-[200px]">
       <div className=" flex flex-col md:flex-row justify-between gap-16">
         <div>
           <p className="text-[34px] font-bold">CONTINUAL-G®</p>
