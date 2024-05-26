@@ -1,8 +1,6 @@
 {
   "/(root)/meeting-registration/page": "app/(root)/meeting-registration/page.js",
   "/(auth)/sign-up/[[...sign-up]]/page": "app/(auth)/sign-up/[[...sign-up]]/page.js",
-  "/api/registermeeting/route": "app/api/registermeeting/route.js",
-  "/api/meetingmail/route": "app/api/meetingmail/route.js",
   "/(root)/(home)/page": "app/(root)/(home)/page.js",
   "/(auth)/sign-in/[[...sign-in]]/page": "app/(auth)/sign-in/[[...sign-in]]/page.js"
 }

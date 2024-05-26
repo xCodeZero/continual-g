@@ -1142,6 +1142,9 @@ video {
 .mt-\[300px\] {
   margin-top: 300px;
 }
+.mt-\[400px\] {
+  margin-top: 400px;
+}
 .block {
   display: block;
 }
@@ -2933,6 +2936,14 @@ video {
 
   .max-sm\:mt-\[200px\] {
     margin-top: 200px;
+  }
+
+  .max-sm\:mt-\[300px\] {
+    margin-top: 300px;
+  }
+
+  .max-sm\:mt-\[400px\] {
+    margin-top: 400px;
   }
 
   .max-sm\:w-96 {
