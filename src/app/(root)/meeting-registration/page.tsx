@@ -192,7 +192,7 @@ const MeetingRegistration = () => {
   };
 
   return (
-    <div className="flex items-center justify-center  w-screen">
+    <div className="flex items-center justify-center w-screen max-sm:mb-96 max-sm:mt-12">
       <div className="flex  items-center justify-center h-screen w-screen">
         <div className="flex h-full w-full  flex-col items-center p-20 max-sm:w-full">
           <Link href="/">

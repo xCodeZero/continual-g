@@ -42,7 +42,16 @@ function HeroSection() {
         </div>
       </div>
       <div className="max-sm:w-full">
-        <img src="/images/hero.png" alt="hero image" className="w-full" />
+        <div className="videos">
+          <div className="video-item">
+            <div className="centered-video w-full h-full">
+              <video controls autoPlay muted loop>
+                <source src="/video/continual.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+        {/* <img src="/images/hero.png" alt="hero image" className="w-full" /> */}
       </div>
       <Toaster />
     </section>

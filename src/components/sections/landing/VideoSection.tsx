@@ -9,12 +9,12 @@ const VideoSection = () => {
         <div className="video-item">
           <div className="centered-video w-full h-full">
             <video controls autoPlay muted loop>
-              <source src="/video/continual.mp4" type="video/mp4" />
+              <source src="/video/continualintro.mp4" type="video/mp4" />
             </video>
           </div>
         </div>
       </div>
-      <div className="max-sm:w-full w-[1500px]">
+      <div className="max-sm:w-full w-[2600px]">
         <HeaderVideo
           title="We are excited to invite you to the official launching of CONTINUAL-G® and an enriching virtual meeting featuring Dr. Wallace Bridge, the formulator of CONTINUAL-G®, and his esteemed team. Join us to explore the groundbreaking benefits and clinical applications of Glyteine. Register below to secure your spot!
           "
