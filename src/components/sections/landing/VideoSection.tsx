@@ -16,7 +16,7 @@ const VideoSection = () => {
       </div>
       <div className="max-sm:w-full w-[1500px]">
         <HeaderVideo
-          title="We are excited to invite you to the official launching of Continual-G and an enriching virtual meeting featuring Dr. Wallace Bridge, the formulator of Continual-G, and his esteemed team. Join us to explore the groundbreaking benefits and clinical applications of Glyteine. Register below to secure your spot!
+          title="We are excited to invite you to the official launching of CONTINUAL-G® and an enriching virtual meeting featuring Dr. Wallace Bridge, the formulator of CONTINUAL-G®, and his esteemed team. Join us to explore the groundbreaking benefits and clinical applications of Glyteine. Register below to secure your spot!
           "
           description=""
         />
